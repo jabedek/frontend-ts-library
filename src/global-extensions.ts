@@ -90,21 +90,39 @@ declare global {
   }
 }
 
+function logExtensionAdded(objName: string, fnName: string) {
+  const nameStyle =
+    "color: lightgreen; background: rgba(75,70,70,1); font-size: 14px; padding: 5px 3.2px; font-weight: 600; ";
+
+  const defaultStyle =
+    "color: rgba(200,200,230,1); background: rgba(75,70,70,1); font-size: 14px; padding: 5px 3.2px; ";
+  console.log(
+    `%c${fnName}%cwas successfully set as new property to%c${objName}.`,
+    nameStyle,
+    defaultStyle,
+    nameStyle
+  );
+}
+
 /** Math */
 if (!Math.randomInt) {
   Math.randomInt = randomIntFn;
+  logExtensionAdded("Math", "randomInt");
 }
 
 if (!Math.nearestFloor) {
   Math.nearestFloor = nearestFloorFn;
+  logExtensionAdded("Math", "nearestFloor");
 }
 
 if (!Math.nearestCeil) {
   Math.nearestCeil = nearestCeilFn;
+  logExtensionAdded("Math", "nearestCeil");
 }
 
 /** String */
 if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
+  logExtensionAdded("String", "normalizeCountryChars");
   String.prototype.normalizeCountryChars = function (
     countryCode: CountryCode
   ): string {
@@ -113,6 +131,7 @@ if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
 }
 
 if (!String.prototype.hasOwnProperty("longestSubstring")) {
+  logExtensionAdded("String", "longestSubstring");
   String.prototype.longestSubstring = async function (): Promise<string> {
     return longestSubstringFn(this.toString());
   };
@@ -120,18 +139,21 @@ if (!String.prototype.hasOwnProperty("longestSubstring")) {
 
 /** Array */
 if (!Array.prototype.hasOwnProperty("sortNumbers")) {
+  logExtensionAdded("Array", "sortNumbers");
   Array.prototype.sortNumbers = function (): number[] {
     return arrayUtilsProtected.sortNumbersFn(this);
   };
 }
 
 if (!Array.prototype.hasOwnProperty("random")) {
+  logExtensionAdded("Array", "random");
   Array.prototype.random = function <T>(): T | undefined {
     return arrayUtilsProtected.randomFn(this);
   };
 }
 
 if (!Array.prototype.hasOwnProperty("differenceDistinctBetween")) {
+  logExtensionAdded("Array", "differenceDistinctBetween");
   Array.prototype.differenceDistinctBetween = function <T extends ArrayElement>(
     compared: T[],
     compareObjectsWithoutIdKey?: boolean,
@@ -148,6 +170,7 @@ if (!Array.prototype.hasOwnProperty("differenceDistinctBetween")) {
 
 /** Promise */
 if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
+  logExtensionAdded("Promise", "fireAndForget");
   Promise.prototype.fireAndForget = function (printError = false): void {
     promiseUtilsProtected.fireAndForgetFn(this, printError);
   };
