@@ -12,6 +12,8 @@ import {
 import { convertTime } from "./standalone/datetime";
 import { createInputId } from "./standalone/input-elements";
 
+import { startSniffing, stopSniffing } from "./standalone/http-sniffer";
+
 export {
   randomIntFn,
   nearestFloorFn,
@@ -20,4 +22,6 @@ export {
   longestSubstringFn,
   convertTime,
   createInputId,
+  startSniffing,
+  stopSniffing,
 };

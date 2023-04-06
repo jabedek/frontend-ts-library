@@ -1,19 +1,11 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { randomIntFn, nearestFloorFn, nearestCeilFn, normalizeCountryCharsFn, longestSubstringFn, } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
 function logExtensionAdded(objName, fnName) {
-    const nameStyle = "color: lightgreen; background: rgba(75,70,70,1); font-size: 14px; padding: 5px 3.2px; font-weight: 600; ";
-    const defaultStyle = "color: rgba(200,200,230,1); background: rgba(75,70,70,1); font-size: 14px; padding: 5px 3.2px; ";
-    console.log(`%c${fnName}%cwas successfully set as new property to%c${objName}.`, nameStyle, defaultStyle, nameStyle);
+    const emojiStyle = "background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px; font-weight: 600; height: 24px;";
+    const nameStyle = "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; font-weight: 600; height: 24px;";
+    const defaultStyle = "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; height: 24px;";
+    console.log(`%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`, emojiStyle, nameStyle, defaultStyle, nameStyle, emojiStyle);
 }
 /** Math */
 if (!Math.randomInt) {
@@ -37,10 +29,8 @@ if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
 }
 if (!String.prototype.hasOwnProperty("longestSubstring")) {
     logExtensionAdded("String", "longestSubstring");
-    String.prototype.longestSubstring = function () {
-        return __awaiter(this, void 0, void 0, function* () {
-            return longestSubstringFn(this.toString());
-        });
+    String.prototype.longestSubstring = async function () {
+        return longestSubstringFn(this.toString());
     };
 }
 /** Array */

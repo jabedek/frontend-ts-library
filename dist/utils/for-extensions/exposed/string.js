@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 /**
 Replaces Polish characters with their Latin equivalents.
 @param text - The text to be normalized.
@@ -35,21 +26,19 @@ export function normalizeCountryCharsFn(text, countryCode) {
             return text;
     }
 }
-export function longestSubstringFn(s) {
-    return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((resolve) => {
-            const scanner = [];
-            let longest = 0;
-            for (let char of s) {
-                const possibleIndex = scanner.indexOf(char);
-                if (possibleIndex !== -1) {
-                    scanner.splice(0, possibleIndex + 1);
-                }
-                scanner.push(char);
-                longest = Math.max(longest, scanner.length);
+export async function longestSubstringFn(s) {
+    return new Promise((resolve) => {
+        const scanner = [];
+        let longest = 0;
+        for (let char of s) {
+            const possibleIndex = scanner.indexOf(char);
+            if (possibleIndex !== -1) {
+                scanner.splice(0, possibleIndex + 1);
             }
-            resolve(scanner.join(""));
-        });
+            scanner.push(char);
+            longest = Math.max(longest, scanner.length);
+        }
+        resolve(scanner.join(""));
     });
 }
 //# sourceMappingURL=string.js.map
