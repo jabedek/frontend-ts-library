@@ -3,10 +3,10 @@ import {
   randomIntFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
+  roundPreciseFn,
 } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
-import { roundPreciseFn } from "utils/for-extensions/exposed/math";
 
 export {};
 

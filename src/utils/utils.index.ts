@@ -1,4 +1,4 @@
-import { randomIntFn } from "./for-extensions/exposed/math";
+import { randomIntFn, roundPreciseFn } from "./for-extensions/exposed/math";
 import {
   normalizeCountryCharsFn,
   longestSubstringFn,
@@ -9,6 +9,7 @@ import { startListening, stopListening } from "./standalone/http-listener";
 
 export {
   randomIntFn,
+  roundPreciseFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
   convertTime,
