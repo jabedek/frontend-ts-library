@@ -3,16 +3,17 @@ function popRandomFn(arr) {
         return undefined;
     }
     const randomIndex = Math.randomInt(0, arr.length - 1);
-    const randomEl = Object.assign({}, arr[randomIndex]);
+    const randomEl = typeof arr[randomIndex] === "object"
+        ? Object.assign({}, arr[randomIndex]) : arr[randomIndex];
     const newArr = arr.filter((_, i) => i !== randomIndex);
     arr = newArr;
     return randomEl;
 }
-function randomFn(arr, amount = 0) {
-    if (!arr || amount < 0) {
+function randomFn(arr, amount = 1) {
+    if (!arr || amount <= 0) {
         return [];
     }
-    if (amount === 0) {
+    if (amount === 1) {
         return [arr[Math.randomInt(0, arr.length - 1)]];
     }
     else {

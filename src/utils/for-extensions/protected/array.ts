@@ -6,19 +6,22 @@ function popRandomFn<T>(arr: T[]): T | undefined {
   }
 
   const randomIndex = Math.randomInt(0, arr.length - 1);
-  const randomEl = { ...arr[randomIndex] };
+  const randomEl =
+    typeof arr[randomIndex] === "object"
+      ? { ...arr[randomIndex] }
+      : arr[randomIndex];
   const newArr = arr.filter((_, i) => i !== randomIndex);
   arr = newArr;
 
   return randomEl;
 }
 
-function randomFn<T>(arr: T[], amount = 0): T[] {
-  if (!arr || amount < 0) {
+function randomFn<T>(arr: T[], amount = 1): T[] {
+  if (!arr || amount <= 0) {
     return [];
   }
 
-  if (amount === 0) {
+  if (amount === 1) {
     return [arr[Math.randomInt(0, arr.length - 1)]];
   } else {
     const copy: T[] = [...arr];
