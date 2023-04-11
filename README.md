@@ -2,7 +2,7 @@
 
 ## _Extra Sh!t for Frontend Development!_
 
-Frotools provides basic extensions for Math, Promise, String, Array globals objects. Also it adds some additional utils related to other areas. All these functions will amp your work on building components/views/custom-html-elements etc.
+This library provides basic extensions for Math, Promise, String, Array globals objects. Also it adds some additional utils related to other areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
 ## Features
 
@@ -12,7 +12,7 @@ Frotools provides basic extensions for Math, Promise, String, Array globals obje
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
-- Providing functions related to HTTP: **startListening** (http sniffing)
+- Providing functions related to HTTP: **startListening**
 
 ## Installation
 
