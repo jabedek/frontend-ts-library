@@ -27,7 +27,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 ...
 ```
 
-**_`Note for React users:`_**
+### **_`Note for React users:`_**
 
 <pre></pre>
 
