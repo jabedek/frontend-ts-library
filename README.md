@@ -8,11 +8,10 @@ This library provides basic extensions for Math, Promise, String, Array globals 
 
 - Extending **JS.Math** with functions: **randomInt, roundPrecise**
 - Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
-- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
+- Extending **JS.Array** with functions: **sortNumbers, random, differenceDistinctBetween**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
-- Providing functions related to HTTP: **startListening**
 
 ## Installation
 
@@ -40,9 +39,7 @@ convertTime('toMS', 3, 'seconds')
 await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabev'.longestSubstring()
 [13,67,4,24,566].sortNumbers()
 [1, 2, 3].random()
-[1, 2, 3].random(2)
-[1, 2, 3].popRandom()
-[1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
+[1, 2, 3].differenceDistinctBetween([1, 2, 3, 3, 4])
 createInputId('select')
 new Promise(() => {}).fireAndForget()
 ```

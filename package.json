@@ -1,6 +1,6 @@
 {
-  "name": "frotools",
-  "version": "1.0.3",
+  "name": "frotsi",
+  "version": "1.2.19",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
