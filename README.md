@@ -1,3 +1,5 @@
+TEST
+
 # ✨Frontend TS Library - Frotsi ✨
 
 ## _Extra Sh!t for Frontend Development!_
