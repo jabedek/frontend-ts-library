@@ -1,7 +1,4 @@
-export function randomIntFn(
-  minIncl: number = 1,
-  maxIncl: number = 100
-): number {
+export function randomIntFn(minIncl = 1, maxIncl = 100): number {
   if (minIncl === maxIncl) {
     return minIncl;
   }
@@ -12,23 +9,21 @@ export function randomIntFn(
     maxIncl = tempMin;
   }
 
-  minIncl = Math.ceil(minIncl) - 1;
   maxIncl = Math.floor(maxIncl);
+  minIncl = Number(Number(minIncl).toFixed(0));
+
   return Math.floor(Math.random() * (maxIncl - minIncl) + (minIncl + 1));
 }
 
-export function nearestFloorFn(
+export function roundPreciseFn(
   rationalNumber: number,
-  decimalPrecision: number
+  dir: "up" | "down",
+  decimalPrecision = 0
 ): number {
-  const power = Math.pow(10, decimalPrecision);
-  return Math.floor(rationalNumber * power) / power;
-}
-
-export function nearestCeilFn(
-  rationalNumber: number,
-  decimalPrecision: number
-): number {
-  const power = Math.pow(10, decimalPrecision);
-  return Math.ceil(rationalNumber * power) / power;
+  if (dir === "up") {
+    const power = Math.pow(10, decimalPrecision);
+    return Math.ceil(rationalNumber * power) / power;
+  } else {
+    return Number(Number(rationalNumber).toFixed(decimalPrecision));
+  }
 }

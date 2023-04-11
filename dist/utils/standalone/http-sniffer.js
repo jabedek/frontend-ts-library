@@ -19,8 +19,8 @@ function randomInt(minIncl = 10000, maxIncl = 80000) {
         minIncl = maxIncl;
         maxIncl = tempMin;
     }
-    minIncl = Math.ceil(minIncl) - 1;
     maxIncl = Math.floor(maxIncl);
+    minIncl = Number(Number(minIncl).toFixed(0));
     return Math.floor(Math.random() * (maxIncl - minIncl) + (minIncl + 1));
 }
 function shouldInterceptRequest(url, startTime, endTime) {
@@ -114,7 +114,7 @@ async function saveRequestData(response, requestOptions) {
     });
 }
 /**
- * Starts listening for network requests.
+ * Starts listening for network requests on current browser tab.
  *
  * @param {boolean} enableLogs - Indicates whether to enable logging.
  * @param {Date | undefined} startTime - Filters requests by start time if specified.

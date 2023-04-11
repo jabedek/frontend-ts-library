@@ -1,6 +1,7 @@
-import { randomIntFn, nearestFloorFn, nearestCeilFn, normalizeCountryCharsFn, longestSubstringFn, } from "./utils/utils.index";
+import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
+import { roundPreciseFn } from "utils/for-extensions/exposed/math";
 function logExtensionAdded(objName, fnName) {
     const emojiStyle = "background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px; font-weight: 600; height: 24px;";
     const nameStyle = "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; font-weight: 600; height: 24px;";
@@ -12,13 +13,9 @@ if (!Math.randomInt) {
     Math.randomInt = randomIntFn;
     logExtensionAdded("Math", "randomInt");
 }
-if (!Math.nearestFloor) {
-    Math.nearestFloor = nearestFloorFn;
-    logExtensionAdded("Math", "nearestFloor");
-}
-if (!Math.nearestCeil) {
-    Math.nearestCeil = nearestCeilFn;
-    logExtensionAdded("Math", "nearestCeil");
+if (!Math.roundPrecise) {
+    Math.roundPrecise = roundPreciseFn;
+    logExtensionAdded("Math", "roundPrecise");
 }
 /** String */
 if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
@@ -42,8 +39,14 @@ if (!Array.prototype.hasOwnProperty("sortNumbers")) {
 }
 if (!Array.prototype.hasOwnProperty("random")) {
     logExtensionAdded("Array", "random");
-    Array.prototype.random = function () {
-        return arrayUtilsProtected.randomFn(this);
+    Array.prototype.random = function (amount) {
+        return arrayUtilsProtected.randomFn(this, amount);
+    };
+}
+if (!Array.prototype.hasOwnProperty("popRandom")) {
+    logExtensionAdded("Array", "popRandom");
+    Array.prototype.popRandom = function () {
+        return arrayUtilsProtected.popRandomFn(this);
     };
 }
 if (!Array.prototype.hasOwnProperty("differenceDistinctBetween")) {

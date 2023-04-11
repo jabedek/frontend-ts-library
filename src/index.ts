@@ -2,8 +2,6 @@ import "./global-extensions";
 
 import {
   randomIntFn,
-  nearestFloorFn,
-  nearestCeilFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
   convertTime,
@@ -16,8 +14,6 @@ import { Primitive, CallbackFn, TimeUnit } from "./models";
 
 export {
   randomIntFn,
-  nearestFloorFn,
-  nearestCeilFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
   convertTime,

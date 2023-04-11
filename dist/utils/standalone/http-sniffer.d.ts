@@ -1,6 +1,6 @@
 declare function stopListening(): void;
 /**
- * Starts listening for network requests.
+ * Starts listening for network requests on current browser tab.
  *
  * @param {boolean} enableLogs - Indicates whether to enable logging.
  * @param {Date | undefined} startTime - Filters requests by start time if specified.

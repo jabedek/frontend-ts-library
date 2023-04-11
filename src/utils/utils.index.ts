@@ -1,9 +1,5 @@
 /** UTILS */
-import {
-  randomIntFn,
-  nearestFloorFn,
-  nearestCeilFn,
-} from "./for-extensions/exposed/math";
+import { randomIntFn } from "./for-extensions/exposed/math";
 import {
   normalizeCountryCharsFn,
   longestSubstringFn,
@@ -16,8 +12,6 @@ import { startSniffing, stopSniffing } from "./standalone/http-sniffer";
 
 export {
   randomIntFn,
-  nearestFloorFn,
-  nearestCeilFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
   convertTime,

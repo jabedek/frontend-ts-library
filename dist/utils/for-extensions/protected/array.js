@@ -1,7 +1,32 @@
 import "../../../global-extensions";
-function randomFn(arr) {
-    var _a;
-    return (_a = arr[Math.randomInt(0, arr.length - 1)]) !== null && _a !== void 0 ? _a : undefined;
+function popRandomFn(arr) {
+    if (!arr) {
+        return undefined;
+    }
+    const randomIndex = Math.randomInt(0, arr.length - 1);
+    const randomEl = Object.assign({}, arr[randomIndex]);
+    const newArr = arr.filter((_, i) => i !== randomIndex);
+    arr = newArr;
+    return randomEl;
+}
+function randomFn(arr, amount = 0) {
+    if (!arr || amount < 0) {
+        return [];
+    }
+    if (amount === 0) {
+        return [arr[Math.randomInt(0, arr.length - 1)]];
+    }
+    else {
+        const copy = [...arr];
+        const elements = [];
+        for (let i = 0; i < amount; i++) {
+            const el = copy.popRandom();
+            if (el) {
+                elements.push(el);
+            }
+        }
+        return elements;
+    }
 }
 function comparePrimitiveArrays(base, compared) {
     const diff1 = base.filter((x) => !compared.includes(x));
@@ -50,6 +75,7 @@ function sortNumbersFn(array) {
     return array.sort((a, b) => (a > b ? 1 : -1));
 }
 export default {
+    popRandomFn,
     randomFn,
     differenceDistinctBetweenFn,
     sortNumbersFn,

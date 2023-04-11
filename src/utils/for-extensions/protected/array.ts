@@ -1,8 +1,38 @@
 import { ArrayElement } from "../../../models";
 import "../../../global-extensions";
 
-function randomFn<T>(arr: T[]): T | undefined {
-  return arr[Math.randomInt(0, arr.length - 1)] ?? undefined;
+function popRandomFn<T>(arr: T[]): T | undefined {
+  if (!arr) {
+    return undefined;
+  }
+
+  const randomIndex = Math.randomInt(0, arr.length - 1);
+  const randomEl = { ...arr[randomIndex] };
+  const newArr = arr.filter((_, i) => i !== randomIndex);
+  arr = newArr;
+
+  return randomEl;
+}
+
+function randomFn<T>(arr: T[], amount = 0): T[] {
+  if (!arr || amount < 0) {
+    return [];
+  }
+
+  if (amount === 0) {
+    return [arr[Math.randomInt(0, arr.length - 1)]];
+  } else {
+    const copy: T[] = [...arr];
+    const elements: T[] = [];
+    for (let i = 0; i < amount; i++) {
+      const el = copy.popRandom();
+      if (el) {
+        elements.push(el);
+      }
+    }
+
+    return elements;
+  }
 }
 
 function comparePrimitiveArrays<T = string | number | boolean>(
@@ -92,6 +122,7 @@ function sortNumbersFn<T extends number>(array: T[]): number[] {
 }
 
 export default {
+  popRandomFn,
   randomFn,
   differenceDistinctBetweenFn,
   sortNumbersFn,

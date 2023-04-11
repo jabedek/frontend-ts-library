@@ -4,8 +4,11 @@ export {};
 declare global {
   interface Math {
     randomInt(minIncl: number, maxIncl: number): number;
-    nearestFloor(rationalNumber: number, decimalPrecision: number): number;
-    nearestCeil(rationalNumber: number, decimalPrecision: number): number;
+    roundPrecise(
+      rationalNumber: number,
+      dir: "up" | "down",
+      decimalPrecision: number
+    ): number;
   }
 
   interface String {
@@ -15,7 +18,8 @@ declare global {
 
   interface Array<T> {
     sortNumbers(): T[];
-    random(): T | undefined;
+    random(amount: number): T[];
+    popRandom(): T | undefined;
     differenceDistinctBetween(
       compared: T[],
       compareObjectsWithoutIdKey?: boolean,

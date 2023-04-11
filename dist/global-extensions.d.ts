@@ -12,21 +12,14 @@ declare global {
          */
         randomInt(minIncl: number, maxIncl: number): number;
         /**
-         * Returns the nearest smaller number of a specified rational number based on a given decimal precision.
+         * Rounds a rational number to a specified decimal precision, either up or down.
          *
-         * @param rationalNumber - The rational number to be rounded.
-         * @param decimalPrecision - The number of decimal places to keep after rounding.
-         * @returns The nearest smaller number of the given rational number based on the decimalPrecision value.
+         * @param rationalNumber The rational number to round.
+         * @param dir The rounding direction. "up" for rounding up, "down" for rounding down.
+         * @param decimalPrecision The number of decimal places to round to. Default is 0.
+         * @returns The rounded number.
          */
-        nearestFloor(rationalNumber: number, decimalPrecision: number): number;
-        /**
-         * Returns the nearest greater number of a specified rational number based on a given decimal precision.
-         *
-         * @param rationalNumber - The rational number to be rounded.
-         * @param decimalPrecision - The number of decimal places to keep after rounding.
-         * @returns The nearest greater number of the given rational number based on the `decimalPrecision` value.
-         */
-        nearestCeil(rationalNumber: number, decimalPrecision: number): number;
+        roundPrecise(rationalNumber: number, dir: "up" | "down", decimalPrecision: number): number;
     }
     interface String {
         /**
@@ -47,13 +40,24 @@ declare global {
          */
         sortNumbers(): T[];
         /**
-         * Returns a random element from an array.
+         * Pops a random element from an array.
          *
-         * @returns A randomly-selected element from the input array, or `undefined` if the input array is empty.
+         * @returns A randomly-removed element from the input array, or `undefined` if the input array is empty.
          */
-        random(): T | undefined;
+        popRandom(): T | undefined;
+        /**
+         * Returns an array of found random elements. Randomness does not generate doubled matches.
+         *
+         * @param arr The array to choose random elements from.
+         * @param amount The number of random elements to choose from the array. Default is 0 (return one random element).
+         * @returns An array of random elements from the input array.
+         */
+        random(amount: number): T[];
         /**
          * Compares two arrays of objects and returns the differences between them.
+         *
+         * If comparing two object arrays without providing id key (and accepting `compareObjectsWithoutIdKey`) will cause function to use `JSON.stringify`.
+         *
          * @param compared The compared array of objects to compare with.
          * @param compareObjectsWithoutIdKey A boolean value that specifies whether to compare objects without identifiers.
          * @param objectIdKey The name of the field that serves as the identifier for each object in the arrays.

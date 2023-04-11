@@ -6,12 +6,13 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 
 ## Features
 
-- Extending **JS.Math** with functions: **randomInt, nearestFloor, nearestCeil**
+- Extending **JS.Math** with functions: **randomInt, roundPrecise**
 - Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
-- Extending **JS.Array** with functions: **sortNumbers, random, differenceDistinctBetween**
+- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, differenceDistinctBetween**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
+- Providing functions related to HTTP: **startListening** (http sniffing)
 
 ## Installation
 
@@ -31,14 +32,16 @@ After installing and importing, use it anywhere in your app, like so:
 
 ```sh
 Math.randomInt(1, 2)
-Math.nearestFloor(10, 3)
-Math.nearestCeil(10, 3)
+Math.roundPrecise('up', 54.125, 2)
+Math.roundPrecise('down', 54.125, 2)
 convertTime('fromMS', 3000, 'seconds')
 convertTime('toMS', 3, 'seconds')
 'Żółć'.normalizeCountryChars('PL')
-await 'asdasdbjasdhjbehbdasdjwefiuhjabeasdaasdbeasdabev'.longestSubstring()
+await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabev'.longestSubstring()
 [13,67,4,24,566].sortNumbers()
 [1, 2, 3].random()
+[1, 2, 3].random(2)
+[1, 2, 3].popRandom()
 [1, 2, 3].differenceDistinctBetween([1, 2, 3, 3, 4])
 createInputId('select')
 new Promise(() => {}).fireAndForget()
