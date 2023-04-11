@@ -1,4 +1,4 @@
-import { ArrayElement, CountryCode } from "./models";
+import { ArrayElement, CountryCode, SymmetricalDifferences } from "./models";
 import {
   randomIntFn,
   normalizeCountryCharsFn,
@@ -85,7 +85,7 @@ declare global {
       compared: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
-    ): { diffBase: T[]; diffCompared: T[] } | undefined;
+    ): SymmetricalDifferences<T> | undefined;
   }
 
   interface Promise<T> {

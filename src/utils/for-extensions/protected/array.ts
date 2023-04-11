@@ -1,5 +1,4 @@
-import { ArrayElement } from "../../../models";
-import "../../../global-extensions";
+import { ArrayElement, SymmetricalDifferences } from "../../../models";
 
 function popRandomFn<T>(arr: T[]): T | undefined {
   if (!arr) {
@@ -49,7 +48,7 @@ function compareObjectArrays<T extends ArrayElement>(
   compared: T[],
   compareObjectsWithoutIdKey?: boolean,
   objectIdKey?: keyof T
-): { diffBase: T[]; diffCompared: T[] } | undefined {
+): SymmetricalDifferences<T> | undefined {
   const identifier = (objectIdKey || "id" || "_id") as keyof T;
 
   const elementsHaveIdKey =
@@ -104,7 +103,7 @@ function symmetricDifferenceFn<T extends ArrayElement>(
   compared: T[],
   compareObjectsWithoutIdKey?: boolean,
   objectIdKey?: keyof T
-): { diffBase: T[]; diffCompared: T[] } | undefined {
+): SymmetricalDifferences<T> | undefined {
   if (!!compared[0] && typeof compared[0] === "object") {
     return compareObjectArrays(
       base,

@@ -1,4 +1,3 @@
-/** UTILS */
 import { randomIntFn } from "./for-extensions/exposed/math";
 import { normalizeCountryCharsFn, longestSubstringFn } from "./for-extensions/exposed/string";
 import { convertTime } from "./standalone/datetime";

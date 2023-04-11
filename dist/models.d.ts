@@ -12,3 +12,7 @@ export declare type CountryCode = "PL" | "DE";
  * Example 2: `Direction<"MS">` generates type alias `"fromMS" | "toMS"`.
  */
 export declare type Direction<E extends string = ""> = `${"from" | "to"}${E}`;
+export declare type SymmetricalDifferences<T> = {
+    diffBase: T[];
+    diffCompared: T[];
+};

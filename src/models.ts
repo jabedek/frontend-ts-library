@@ -15,3 +15,5 @@ export type CountryCode = "PL" | "DE";
  * Example 2: `Direction<"MS">` generates type alias `"fromMS" | "toMS"`.
  */
 export type Direction<E extends string = ""> = `${"from" | "to"}${E}`;
+
+export type SymmetricalDifferences<T> = { diffBase: T[]; diffCompared: T[] };

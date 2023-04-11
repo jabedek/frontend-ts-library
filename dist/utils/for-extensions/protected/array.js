@@ -1,4 +1,3 @@
-import "../../../global-extensions";
 function popRandomFn(arr) {
     if (!arr) {
         return undefined;

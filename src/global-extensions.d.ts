@@ -1,4 +1,4 @@
-import { CountryCode } from "./models";
+import { CountryCode, SymmetricalDifferences } from "./models";
 export {};
 
 declare global {
@@ -24,7 +24,7 @@ declare global {
       compared: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
-    ): { diffBase: T[]; diffCompared: T[] } | undefined;
+    ): SymmetricalDifferences<T> | undefined;
   }
 
   interface Promise<T> {

@@ -38,7 +38,7 @@ const normalizeGerman = (text = ""): string => {
 export function normalizeCountryCharsFn(
   text: string,
   countryCode: CountryCode
-) {
+): string {
   switch (countryCode) {
     case "PL":
       return normalizePolish(text);

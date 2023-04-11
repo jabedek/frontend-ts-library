@@ -1,4 +1,4 @@
-import { CountryCode } from "./models";
+import { CountryCode, SymmetricalDifferences } from "./models";
 export {};
 declare global {
     interface Math {
@@ -65,10 +65,7 @@ declare global {
          * and `diffCompared` (an array of elements that are in `compared` but not in `base`). Returns `undefined` if
          * objects without proper identifiers are not allowed to be compared.
          */
-        symmetricDifference(compared: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): {
-            diffBase: T[];
-            diffCompared: T[];
-        } | undefined;
+        symmetricDifference(compared: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): SymmetricalDifferences<T> | undefined;
     }
     interface Promise<T> {
         /**
