@@ -12,7 +12,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
-- Providing functions related to HTTP: **startListening** (sniffing at current page)
+- Providing functions related to HTTP: **startListening** (listening at current page)
 
 ## Installation
 

@@ -8,7 +8,7 @@ import {
 import { convertTime } from "./standalone/datetime";
 import { createInputId } from "./standalone/input-elements";
 
-import { startSniffing, stopSniffing } from "./standalone/http-sniffer";
+import { startListening, stopListening } from "./standalone/http-listener";
 
 export {
   randomIntFn,
@@ -16,6 +16,6 @@ export {
   longestSubstringFn,
   convertTime,
   createInputId,
-  startSniffing,
-  stopSniffing,
+  startListening,
+  stopListening,
 };

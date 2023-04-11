@@ -186,4 +186,4 @@ function startListening(enableLogs = true, startTime?: Date, endTime?: Date) {
 
 // startListening(true, startTime, endTime);
 
-export { startListening as startSniffing, stopListening as stopSniffing };
+export { startListening, stopListening };

@@ -140,5 +140,5 @@ function startListening(enableLogs = true, startTime, endTime) {
     clockID = setTimeout(stopListening, (endTime || new Date(23, 59, 59, 999)).getTime() - Date.now());
 }
 // startListening(true, startTime, endTime);
-export { startListening as startSniffing, stopListening as stopSniffing };
-//# sourceMappingURL=http-sniffer.js.map
+export { startListening, stopListening };
+//# sourceMappingURL=http-listener.js.map

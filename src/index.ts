@@ -6,8 +6,8 @@ import {
   longestSubstringFn,
   convertTime,
   createInputId,
-  startSniffing,
-  stopSniffing,
+  startListening,
+  stopListening,
 } from "./utils/utils.index";
 
 import { Primitive, CallbackFn, TimeUnit } from "./models";
@@ -18,8 +18,8 @@ export {
   longestSubstringFn,
   convertTime,
   createInputId,
-  startSniffing,
-  stopSniffing,
+  startListening,
+  stopListening,
 };
 
 export { Primitive, CallbackFn, TimeUnit };
