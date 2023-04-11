@@ -1,19 +1,19 @@
-function popRandomFn(arr) {
-    if (!(arr === null || arr === void 0 ? void 0 : arr.length)) {
+function popRandomFn(originalArray) {
+    if (!(originalArray === null || originalArray === void 0 ? void 0 : originalArray.length)) {
         return undefined;
     }
-    const randomIndex = Math.randomInt(0, arr.length - 1);
-    return arr.splice(randomIndex, 1)[0];
+    const randomIndex = Math.randomInt(0, originalArray.length - 1);
+    return originalArray.splice(randomIndex, 1)[0];
 }
-function randomFn(arr, amount = 1) {
-    if (!arr || amount <= 0) {
+function randomFn(originalArray, amount = 1) {
+    if (!originalArray || amount <= 0) {
         return [];
     }
     if (amount === 1) {
-        return [arr[Math.randomInt(0, arr.length - 1)]];
+        return [originalArray[Math.randomInt(0, originalArray.length - 1)]];
     }
     else {
-        const copy = [...arr];
+        const copy = [...originalArray];
         const elements = [];
         for (let i = 0; i < amount; i++) {
             const el = copy.popRandom();
