@@ -44,7 +44,7 @@ await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj w
 [1, 2, 3].random()
 [1, 2, 3].random(2)
 [1, 2, 3].popRandom()
-[1, 2, 3].differenceDistinctBetween([1, 2, 3, 3, 4])
+[1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
 createInputId('select')
 new Promise(() => {}).fireAndForget()
 ```
