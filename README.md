@@ -1,10 +1,8 @@
-TEST
-
-# ✨Frontend TS Library - Frotsi ✨
+# ✨Frontend Tools - Frotools ✨
 
 ## _Extra Sh!t for Frontend Development!_
 
-Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Also it adds some additional utils related to other areas. All these functions will amp your work on building components/views/custom-html-elements etc.
+Frotools provides basic extensions for Math, Promise, String, Array globals objects. Also it adds some additional utils related to other areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
 ## Features
 
@@ -22,7 +20,7 @@ After installing it with `npm` you should import the library at the top of your 
 For example in Angular it would be **main.ts**:
 
 ```sh
-import 'frotsi';
+import 'frotools';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 ...
