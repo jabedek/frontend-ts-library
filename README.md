@@ -13,6 +13,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
+- Iterator `loop` so you don't have to spread unfilled Arrays anymore
 
 ## Installation
 
@@ -45,4 +46,5 @@ await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj w
 [1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
 createInputId('select')
 new Promise(() => {}).fireAndForget()
+loop(5).forEach(index=> ... )
 ```
