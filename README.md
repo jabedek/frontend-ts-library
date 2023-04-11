@@ -2,7 +2,7 @@
 
 ## _Extra Sh!t for Frontend Development!_
 
-Frotsi provides basic extensions for Math, Promise, String, Array globals objects, and also some additional utils - all these functions will amp your work on coding stuff for components/views/custom-html-elements etc.
+Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Also it adds some additional utils related to other areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
 ## Features
 
