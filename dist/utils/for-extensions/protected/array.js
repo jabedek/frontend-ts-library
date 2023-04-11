@@ -59,12 +59,12 @@ function compareObjectArrays(base, compared, compareObjectsWithoutIdKey, objectI
         };
     }
 }
-function symmetricDifferenceFn(base, compared, compareObjectsWithoutIdKey, objectIdKey) {
-    if (!!compared[0] && typeof compared[0] === "object") {
-        return compareObjectArrays(base, compared, compareObjectsWithoutIdKey, objectIdKey);
+function symmetricDifferenceFn(baseArray, comparedArray, compareObjectsWithoutIdKey, objectIdKey) {
+    if (!!comparedArray[0] && typeof comparedArray[0] === "object") {
+        return compareObjectArrays(baseArray, comparedArray, compareObjectsWithoutIdKey, objectIdKey);
     }
     else {
-        return comparePrimitiveArrays(base, compared);
+        return comparePrimitiveArrays(baseArray, comparedArray);
     }
 }
 function sortNumbersFn(array) {

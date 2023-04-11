@@ -3,5 +3,6 @@ import { normalizeCountryCharsFn, longestSubstringFn, } from "./for-extensions/e
 import { convertTime } from "./standalone/datetime";
 import { createInputId } from "./standalone/input-elements";
 import { startListening, stopListening } from "./standalone/http-listener";
-export { randomIntFn, roundPreciseFn, normalizeCountryCharsFn, longestSubstringFn, convertTime, createInputId, startListening, stopListening, };
+import { loop } from "./standalone/loop-iterator";
+export { randomIntFn, roundPreciseFn, normalizeCountryCharsFn, longestSubstringFn, convertTime, createInputId, startListening, stopListening, loop, };
 //# sourceMappingURL=utils.index.js.map

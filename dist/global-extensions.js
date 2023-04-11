@@ -50,8 +50,8 @@ if (!Array.prototype.hasOwnProperty("popRandom")) {
 }
 if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
     logExtensionAdded("Array", "symmetricDifference");
-    Array.prototype.symmetricDifference = function (compared, compareObjectsWithoutIdKey, objectIdKey) {
-        return arrayUtilsProtected.symmetricDifferenceFn(this, compared, compareObjectsWithoutIdKey, objectIdKey);
+    Array.prototype.symmetricDifference = function (comparedArray, compareObjectsWithoutIdKey, objectIdKey) {
+        return arrayUtilsProtected.symmetricDifferenceFn(this, comparedArray, compareObjectsWithoutIdKey, objectIdKey);
     };
 }
 /** Promise */

@@ -8,6 +8,7 @@ import {
   createInputId,
   startListening,
   stopListening,
+  loop,
 } from "./utils/utils.index";
 
 import { Primitive, CallbackFn, TimeUnit } from "./models";
@@ -20,6 +21,7 @@ export {
   createInputId,
   startListening,
   stopListening,
+  loop,
 };
 
 export { Primitive, CallbackFn, TimeUnit };

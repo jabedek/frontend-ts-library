@@ -95,20 +95,20 @@ function compareObjectArrays<T extends ArrayElement>(
 }
 
 function symmetricDifferenceFn<T extends ArrayElement>(
-  base: T[],
-  compared: T[],
+  baseArray: T[],
+  comparedArray: T[],
   compareObjectsWithoutIdKey?: boolean,
   objectIdKey?: keyof T
 ): SymmetricalDifferences<T> | undefined {
-  if (!!compared[0] && typeof compared[0] === "object") {
+  if (!!comparedArray[0] && typeof comparedArray[0] === "object") {
     return compareObjectArrays(
-      base,
-      compared,
+      baseArray,
+      comparedArray,
       compareObjectsWithoutIdKey,
       objectIdKey
     );
   } else {
-    return comparePrimitiveArrays(base, compared);
+    return comparePrimitiveArrays(baseArray, comparedArray);
   }
 }
 

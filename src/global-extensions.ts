@@ -64,7 +64,6 @@ declare global {
     /**
      * Returns an array of found random elements. Randomness does not generate doubled matches.
      *
-     * @param arr The array to choose random elements from.
      * @param amount The number of random elements to choose from the array. Default is 0 (return one random element).
      * @returns An array of random elements from the input array.
      */
@@ -72,9 +71,9 @@ declare global {
     /**
      * Compares two arrays of objects and returns the differences between them.
      *
-     * If comparing two object arrays without providing id key (and accepting `compareObjectsWithoutIdKey`) will cause function to use `JSON.stringify`.
+     * Comparing two object arrays without providing id key (and accepting `compareObjectsWithoutIdKey`) will cause function to use `JSON.stringify`.
      *
-     * @param compared The compared array of objects to compare with.
+     * @param comparedArray The compared array of objects to compare with.
      * @param compareObjectsWithoutIdKey A boolean value that specifies whether to compare objects without identifiers.
      * @param objectIdKey The name of the field that serves as the identifier for each object in the arrays.
      * @returns An object with two properties: `diffBase` (an array of elements that are in `base` but not in `compared`)
@@ -82,7 +81,7 @@ declare global {
      * objects without proper identifiers are not allowed to be compared.
      */
     symmetricDifference(
-      compared: T[],
+      comparedArray: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
     ): SymmetricalDifferences<T> | undefined;
@@ -169,13 +168,13 @@ if (!Array.prototype.hasOwnProperty("popRandom")) {
 if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
   logExtensionAdded("Array", "symmetricDifference");
   Array.prototype.symmetricDifference = function <T extends ArrayElement>(
-    compared: T[],
+    comparedArray: T[],
     compareObjectsWithoutIdKey?: boolean,
     objectIdKey?: keyof T
   ): { diffBase: T[]; diffCompared: T[] } | undefined {
     return arrayUtilsProtected.symmetricDifferenceFn<T>(
       this as T[],
-      compared,
+      comparedArray,
       compareObjectsWithoutIdKey,
       objectIdKey
     );

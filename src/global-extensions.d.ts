@@ -21,7 +21,7 @@ declare global {
     random(amount: number): T[];
     popRandom(): T | undefined;
     symmetricDifference(
-      compared: T[],
+      comparedArray: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
     ): SymmetricalDifferences<T> | undefined;

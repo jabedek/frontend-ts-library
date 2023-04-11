@@ -6,6 +6,7 @@ import {
 import { convertTime } from "./standalone/datetime";
 import { createInputId } from "./standalone/input-elements";
 import { startListening, stopListening } from "./standalone/http-listener";
+import { loop } from "./standalone/loop-iterator";
 
 export {
   randomIntFn,
@@ -16,4 +17,5 @@ export {
   createInputId,
   startListening,
   stopListening,
+  loop,
 };
