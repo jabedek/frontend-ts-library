@@ -49,10 +49,10 @@ if (!Array.prototype.hasOwnProperty("popRandom")) {
         return arrayUtilsProtected.popRandomFn(this);
     };
 }
-if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
-    logExtensionAdded("Array", "symmetricDifference");
-    Array.prototype.symmetricDifference = function (compared, compareObjectsWithoutIdKey, objectIdKey) {
-        return arrayUtilsProtected.symmetricDifferenceFn(this, compared, compareObjectsWithoutIdKey, objectIdKey);
+if (!Array.prototype.hasOwnProperty("differenceDistinctBetween")) {
+    logExtensionAdded("Array", "differenceDistinctBetween");
+    Array.prototype.differenceDistinctBetween = function (compared, compareObjectsWithoutIdKey, objectIdKey) {
+        return arrayUtilsProtected.differenceDistinctBetweenFn(this, compared, compareObjectsWithoutIdKey, objectIdKey);
     };
 }
 /** Promise */

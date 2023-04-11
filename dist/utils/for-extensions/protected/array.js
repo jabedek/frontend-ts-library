@@ -63,7 +63,7 @@ function compareObjectArrays(base, compared, compareObjectsWithoutIdKey, objectI
         };
     }
 }
-function symmetricDifferenceFn(base, compared, compareObjectsWithoutIdKey, objectIdKey) {
+function differenceDistinctBetweenFn(base, compared, compareObjectsWithoutIdKey, objectIdKey) {
     if (!!compared[0] && typeof compared[0] === "object") {
         return compareObjectArrays(base, compared, compareObjectsWithoutIdKey, objectIdKey);
     }
@@ -77,7 +77,7 @@ function sortNumbersFn(array) {
 export default {
     popRandomFn,
     randomFn,
-    symmetricDifferenceFn,
+    differenceDistinctBetweenFn,
     sortNumbersFn,
 };
 //# sourceMappingURL=array.js.map

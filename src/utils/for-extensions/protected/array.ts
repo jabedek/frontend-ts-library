@@ -99,7 +99,7 @@ function compareObjectArrays<T extends ArrayElement>(
   }
 }
 
-function symmetricDifferenceFn<T extends ArrayElement>(
+function differenceDistinctBetweenFn<T extends ArrayElement>(
   base: T[],
   compared: T[],
   compareObjectsWithoutIdKey?: boolean,
@@ -124,6 +124,6 @@ function sortNumbersFn<T extends number>(array: T[]): number[] {
 export default {
   popRandomFn,
   randomFn,
-  symmetricDifferenceFn,
+  differenceDistinctBetweenFn,
   sortNumbersFn,
 };

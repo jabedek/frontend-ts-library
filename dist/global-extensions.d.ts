@@ -65,7 +65,7 @@ declare global {
          * and `diffCompared` (an array of elements that are in `compared` but not in `base`). Returns `undefined` if
          * objects without proper identifiers are not allowed to be compared.
          */
-        symmetricDifference(compared: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): {
+        differenceDistinctBetween(compared: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): {
             diffBase: T[];
             diffCompared: T[];
         } | undefined;
