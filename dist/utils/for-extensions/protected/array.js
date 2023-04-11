@@ -1,11 +1,13 @@
 function popRandomFn(arr) {
-    if (!arr) {
+    arr = [];
+    if (!(arr === null || arr === void 0 ? void 0 : arr.length)) {
         return undefined;
     }
     const randomIndex = Math.randomInt(0, arr.length - 1);
     const randomEl = typeof arr[randomIndex] === "object"
         ? Object.assign({}, arr[randomIndex]) : arr[randomIndex];
     const newArr = arr.filter((_, i) => i !== randomIndex);
+    console.log(arr, newArr);
     arr = newArr;
     return randomEl;
 }

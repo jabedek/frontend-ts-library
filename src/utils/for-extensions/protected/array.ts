@@ -1,7 +1,8 @@
 import { ArrayElement, SymmetricalDifferences } from "../../../models";
 
 function popRandomFn<T>(arr: T[]): T | undefined {
-  if (!arr) {
+  arr = [];
+  if (!arr?.length) {
     return undefined;
   }
 
@@ -11,6 +12,7 @@ function popRandomFn<T>(arr: T[]): T | undefined {
       ? { ...arr[randomIndex] }
       : arr[randomIndex];
   const newArr = arr.filter((_, i) => i !== randomIndex);
+  console.log(arr, newArr);
   arr = newArr;
 
   return randomEl;
