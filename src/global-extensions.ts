@@ -81,7 +81,7 @@ declare global {
      * and `diffCompared` (an array of elements that are in `compared` but not in `base`). Returns `undefined` if
      * objects without proper identifiers are not allowed to be compared.
      */
-    differenceDistinctBetween(
+    symmetricDifference(
       compared: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
@@ -166,14 +166,14 @@ if (!Array.prototype.hasOwnProperty("popRandom")) {
   };
 }
 
-if (!Array.prototype.hasOwnProperty("differenceDistinctBetween")) {
-  logExtensionAdded("Array", "differenceDistinctBetween");
-  Array.prototype.differenceDistinctBetween = function <T extends ArrayElement>(
+if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
+  logExtensionAdded("Array", "symmetricDifference");
+  Array.prototype.symmetricDifference = function <T extends ArrayElement>(
     compared: T[],
     compareObjectsWithoutIdKey?: boolean,
     objectIdKey?: keyof T
   ): { diffBase: T[]; diffCompared: T[] } | undefined {
-    return arrayUtilsProtected.differenceDistinctBetweenFn<T>(
+    return arrayUtilsProtected.symmetricDifferenceFn<T>(
       this as T[],
       compared,
       compareObjectsWithoutIdKey,
