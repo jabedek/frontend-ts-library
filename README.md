@@ -8,7 +8,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 
 - Extending **JS.Math** with functions: **randomInt, roundPrecise**
 - Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
-- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
+- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, differenceDistinctBetween**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
