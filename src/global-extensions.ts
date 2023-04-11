@@ -162,7 +162,7 @@ if (!Array.prototype.hasOwnProperty("random")) {
 if (!Array.prototype.hasOwnProperty("popRandom")) {
   logExtensionAdded("Array", "popRandom");
   Array.prototype.popRandom = function <T>(): T | undefined {
-    return arrayUtilsProtected.popRandomFn(this);
+    return arrayUtilsProtected.popRandomFn<T>(this);
   };
 }
 
