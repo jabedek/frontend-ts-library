@@ -13,12 +13,12 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
-- Iterator `loop` so you don't have to spread unfilled Arrays anymore
+- **loop** iterator so you don't have to spread unfilled Arrays anymore
 
 ## Installation
 
 After installing it with `npm` you should import the library at the top of your project's main (root) JS/TS file, so the global object extensions can attach themselfes.
-For example in Angular it would be **main.ts**:
+For example in Angular it would be **main.ts**, in React **.main.tsx**:
 
 ```sh
 import 'frotsi';
@@ -26,6 +26,13 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 ...
 ```
+
+**_`Note for React users:`_**
+Thanks to **React.StrictNode** set in `main.tsx`, some of this library's functions if used with `console.log`, will cause **_double-logging_**.
+Is you are using **React.StrictNode**, you will see that every output logged into browser console is doubled.
+Example:
+`looping 12...` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `[App / ComponentABC].tsx`
+`looping 12...` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `VM installHook.js:[line_number]`
 
 ## Usage
 
