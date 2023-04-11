@@ -20,7 +20,7 @@ declare global {
     sortNumbers(): T[];
     random(amount: number): T[];
     popRandom(): T | undefined;
-    differenceDistinctBetween(
+    symmetricDifference(
       compared: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T

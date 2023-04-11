@@ -2,17 +2,17 @@
 
 ## _Extra Sh!t for Frontend Development!_
 
-Frotsi provides basic extensions for Math, Promise, String, Array globals objects, and also some additional utils - all these functions will amp your work on coding stuff for components/views/custom-html-elements etc.
+Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Besides that it adds some additional utils for various areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
 ## Features
 
 - Extending **JS.Math** with functions: **randomInt, roundPrecise**
 - Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
-- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, differenceDistinctBetween**
+- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
-- Providing functions related to HTTP: **startListening** (http sniffing)
+- Providing functions related to HTTP: **startListening** (sniffing at current page)
 
 ## Installation
 
@@ -42,7 +42,7 @@ await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj w
 [1, 2, 3].random()
 [1, 2, 3].random(2)
 [1, 2, 3].popRandom()
-[1, 2, 3].differenceDistinctBetween([1, 2, 3, 3, 4])
+[1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
 createInputId('select')
 new Promise(() => {}).fireAndForget()
 ```
