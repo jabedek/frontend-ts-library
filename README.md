@@ -29,19 +29,14 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 ### **_`Note for React users:`_**
 
-<pre></pre>
-
 Thanks to **React.StrictNode** set in `main.tsx` some of this library's functions, when used with `console.log`, will cause **_double-logging_**.
 If you are using **React.StrictNode**, you will see that every output logged into browser console is doubled.
 Example:
 
-<pre></pre>
-
-`looping 12...` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `[App / ComponentABC].tsx`
-
-<pre></pre>
-
-`looping 12...` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `VM installHook.js:[line_number]`
+```sh
+looping 12... [App / ComponentABC].tsx
+looping 12... VM installHook.js:[line_number]
+```
 
 ## Usage
 

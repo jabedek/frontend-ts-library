@@ -1,6 +1,6 @@
 /**
  * Creates an iterable object that can be iterated `amount` number of times.
- * @param amount The number of times to iterate over the values.
+ * @param amount The number of times to iterate.
  * @example loop(5).forEach((index) => console.log(index))
  */
 export const loop = (amount) => {
