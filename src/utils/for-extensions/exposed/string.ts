@@ -1,7 +1,7 @@
 import { CountryCode } from "../../../models";
 
 /**
-Replaces Polish characters with their Latin equivalents.
+Replaces Polish letters with their Latin equivalents.
 @param text - The text to be normalized.
 @returns The normalized string.
 */
@@ -21,7 +21,7 @@ const normalizePolish = (text = ""): string => {
 };
 
 /**
-Replaces German characters with their Latin equivalents.
+Replaces German letters with their Latin equivalents.
 @param text - The text to be normalized.
 @returns The normalized string.
 */

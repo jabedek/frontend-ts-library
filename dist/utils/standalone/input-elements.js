@@ -1,7 +1,8 @@
 import "../../global-extensions";
 /** Distinct `id` should be provided for HTML (or custom) input if we want to combine it with HTML label and other browser functionalities. */
 export function createInputId(dataName, inputType) {
-    return `@id-${dataName}-input-${inputType}-${Math.randomInt(1000, 9000)}-${Math.randomInt(1000, 9000)}`
+    const randomness = `${Math.randomInt(1000, 9999)}-${Math.randomInt(1000, 9999)}`;
+    return `@id-${dataName}-input-${inputType}-${randomness}`
         .replace(/\-/gm, "_")
         .replace(/(\_{2,})/gm, "_");
 }
