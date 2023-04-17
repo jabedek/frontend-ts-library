@@ -8,7 +8,7 @@ export type TimeUnit = "seconds" | "minutes" | "hours";
 export type CountryCode = "PL" | "DE";
 
 /**
- * This is type with `optional generic type parameter with string extension` that describes a two-end direction of conversion/operation (of something) .
+ * This is type with `optional generic type parameter with string extension` that describes a two-end direction of conversion/operation (of something).
  *
  * Example 1: `Direction` generates type alias `"from" | "to"`.
  *
@@ -16,4 +16,7 @@ export type CountryCode = "PL" | "DE";
  */
 export type Direction<E extends string = ""> = `${"from" | "to"}${E}`;
 
-export type SymmetricalDifferences<T> = { diffBase: T[]; diffCompared: T[] };
+export interface SymmetricalDifferences<T> {
+  diffBase: T[];
+  diffCompared: T[];
+}
