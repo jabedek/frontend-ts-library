@@ -4,4 +4,5 @@ import { convertTime } from "./standalone/datetime";
 import { createInputId } from "./standalone/input-elements";
 import { startListening, stopListening } from "./standalone/http-listener";
 import { loop } from "./standalone/loop-iterator";
-export { randomIntFn, roundPreciseFn, normalizeCountryCharsFn, longestSubstringFn, convertTime, createInputId, startListening, stopListening, loop, };
+import { generateDocumentId } from "./standalone/helpers";
+export { randomIntFn, roundPreciseFn, normalizeCountryCharsFn, longestSubstringFn, convertTime, generateDocumentId, createInputId, startListening, stopListening, loop, };
