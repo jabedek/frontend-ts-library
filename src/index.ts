@@ -12,7 +12,7 @@ import {
   generateDocumentId,
 } from "./utils/utils.index";
 
-import { Primitive, CallbackFn, TimeUnit } from "./models";
+import { CallbackFn, TimeUnit } from "./models";
 export {
   randomIntFn,
   normalizeCountryCharsFn,
@@ -25,7 +25,7 @@ export {
   loop,
 };
 
-export { Primitive, CallbackFn, TimeUnit };
+export { CallbackFn, TimeUnit };
 
 function extract() {
   import("./global-extensions");
