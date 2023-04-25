@@ -7,6 +7,7 @@ import {
 } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
+import * as reset from "./reset";
 
 export {};
 
@@ -188,3 +189,5 @@ if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
     promiseUtilsProtected.fireAndForgetFn(this, printError);
   };
 }
+
+export default reset;

@@ -1,7 +1,4 @@
 import "./global-extensions";
-import * as reset from "./reset";
-
-export default reset;
 
 import {
   randomIntFn,
@@ -32,7 +29,6 @@ export { CallbackFn, TimeUnit };
 
 function extract() {
   import("./global-extensions");
-  import("./reset");
 }
 
 extract();
