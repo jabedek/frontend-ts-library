@@ -15,7 +15,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **createInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
-- **loop** iterator so you don't have to spread unfilled Arrays anymore
+- **loop** iterator so you don't have to iterate over spread unfilled Arrays anymore
 
 ## Installation
 
