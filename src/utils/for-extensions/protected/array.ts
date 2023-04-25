@@ -67,8 +67,8 @@ function compareObjectArrays<T extends ArrayElement>(
       comparedStringified
     );
 
-    const baseParsed = diffBase.map((s) => JSON.parse(s));
-    const comparedParsed = diffCompared.map((s) => JSON.parse(s));
+    const baseParsed = diffBase.map((s) => JSON.parse(s)) as T[];
+    const comparedParsed = diffCompared.map((s) => JSON.parse(s)) as T[];
 
     return {
       diffBase: baseParsed,

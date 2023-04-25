@@ -103,14 +103,23 @@ async function saveRequestData(
   let requestHeaders: Record<string, string> = {};
 
   if (requestOptions?.headers) {
-    requestHeaders = JSON.parse(JSON.stringify(requestOptions.headers));
+    requestHeaders = JSON.parse(
+      JSON.stringify(requestOptions.headers)
+    ) as Record<string, string>;
   }
 
   for (const [key, value] of response.headers.entries()) {
     responseHeaders[key] = value;
   }
 
-  const requestData = {
+  const requestData: {
+    responseHeaders: Record<string, any>;
+    requestHeaders: Record<string, string>;
+    payload: any;
+    method: string | undefined;
+    url: string;
+    response: any;
+  } = {
     responseHeaders,
     requestHeaders,
     payload: requestBody ? JSON.parse(requestBody as string) : undefined,

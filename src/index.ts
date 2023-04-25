@@ -1,4 +1,5 @@
 import "./global-extensions";
+import "@total-typescript/ts-reset";
 
 import {
   randomIntFn,
@@ -29,6 +30,7 @@ export { CallbackFn, TimeUnit };
 
 function extract() {
   import("./global-extensions");
+  import("./reset");
 }
 
 extract();
