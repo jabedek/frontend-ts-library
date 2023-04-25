@@ -4,8 +4,6 @@
 
 Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Besides that it adds some additional utils for various areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
-**Also it provides features of great lib called [`@total-typescript/ts-reset`](https://github.com/total-typescript/ts-reset) which improves TypeScript's built-in typings in some annyoing cases.**
-
 ## Features
 
 - Extending **JS.Math** with functions: **randomInt, roundPrecise**

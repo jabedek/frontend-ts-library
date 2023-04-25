@@ -1,5 +1,4 @@
 import { CountryCode, SymmetricalDifferences } from "./models";
-import * as reset from "./reset";
 
 export {};
 
@@ -33,5 +32,3 @@ declare global {
     fireAndForget(printError?: boolean): void;
   }
 }
-
-export default reset;

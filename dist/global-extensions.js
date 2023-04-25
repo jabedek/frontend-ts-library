@@ -1,7 +1,6 @@
 import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, roundPreciseFn, } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
-import * as reset from "./reset";
 function logExtensionAdded(objName, fnName) {
     const emojiStyle = "background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px; font-weight: 600; height: 24px;";
     const nameStyle = "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; font-weight: 600; height: 24px;";
@@ -62,5 +61,4 @@ if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
         promiseUtilsProtected.fireAndForgetFn(this, printError);
     };
 }
-export default reset;
 //# sourceMappingURL=global-extensions.js.map
