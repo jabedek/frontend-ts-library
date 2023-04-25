@@ -5,11 +5,11 @@ import {
   normalizeCountryCharsFn,
   longestSubstringFn,
   convertTime,
-  createInputId,
+  generateInputId,
+  generateDocumentId,
   startListening,
   stopListening,
   loop,
-  generateDocumentId,
 } from "./utils/utils.index";
 
 import { CallbackFn, TimeUnit } from "./models";
@@ -19,7 +19,7 @@ export {
   longestSubstringFn,
   convertTime,
   generateDocumentId,
-  createInputId,
+  generateInputId,
   startListening,
   stopListening,
   loop,

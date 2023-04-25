@@ -4,10 +4,12 @@ import {
   longestSubstringFn,
 } from "./for-extensions/exposed/string";
 import { convertTime } from "./standalone/datetime";
-import { createInputId } from "./standalone/input-elements";
+import {
+  generateInputId,
+  generateDocumentId,
+} from "./standalone/id-generators";
 import { startListening, stopListening } from "./standalone/http-listener";
 import { loop } from "./standalone/loop-iterator";
-import { generateDocumentId } from "./standalone/helpers";
 export {
   randomIntFn,
   roundPreciseFn,
@@ -15,7 +17,7 @@ export {
   longestSubstringFn,
   convertTime,
   generateDocumentId,
-  createInputId,
+  generateInputId,
   startListening,
   stopListening,
   loop,

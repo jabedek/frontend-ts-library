@@ -11,7 +11,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
-- Providing functions related to HTML: **createInputId**
+- Providing functions related to HTML: **generateInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
 - **loop** iterator so you don't have to iterate over spread unfilled Arrays anymore
 
@@ -55,7 +55,7 @@ await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj w
 [1, 2, 3].random(2)
 [1, 2, 3].popRandom()
 [1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
-createInputId('select')
+generateInputId('select')
 new Promise(() => {}).fireAndForget()
 loop(5).forEach(index=> ... )
 ```
