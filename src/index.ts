@@ -1,5 +1,4 @@
 import "./global-extensions";
-import * as reset from "./reset";
 import "@total-typescript/ts-reset";
 
 import {
@@ -25,14 +24,12 @@ export {
   startListening,
   stopListening,
   loop,
-  reset,
 };
 
 export { CallbackFn, TimeUnit };
 
 function extract() {
   import("./global-extensions");
-  import("./reset");
 }
 
 extract();

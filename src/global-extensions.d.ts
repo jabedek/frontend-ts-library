@@ -1,4 +1,6 @@
 import { CountryCode, SymmetricalDifferences } from "./models";
+import "@total-typescript/ts-reset";
+
 export {};
 
 declare global {
