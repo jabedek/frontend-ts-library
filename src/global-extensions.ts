@@ -114,7 +114,7 @@ function logExtensionsAdded() {
   console.groupCollapsed("New functions successfully added to your project:");
   logs.forEach(({ fnName, objName }) =>
     console.log(
-      `%c🎉%cAdded %c${objName}%c[${fnName}]`,
+      `%c🎉%cAdded %c${objName}%c[${fnName}] `,
       emojiStyle,
       defaultStyle,
       nameStyle2,
@@ -122,7 +122,7 @@ function logExtensionsAdded() {
     )
   );
   console.log(
-    `&cThat's only those added to global objects. Check out what else is new at: https://www.npmjs.com/package/frotsi`,
+    `%cThat's only those added to global objects. Check out what else is new at: https://www.npmjs.com/package/frotsi`,
     defaultStyle
   );
 
