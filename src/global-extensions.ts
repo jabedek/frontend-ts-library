@@ -108,10 +108,12 @@ function logExtensionsAdded() {
   const defaultStyle =
     "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; height: 20px;";
 
-  console.group();
+  console.groupCollapsed(
+    `%c🎉%cNew functions successfully added to your project: %c🎉`
+  );
   logs.forEach(({ fnName, objName }) =>
     console.log(
-      `%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`,
+      `${fnName}%cwas set as new property to%c${objName}`,
       emojiStyle,
       nameStyle,
       defaultStyle,
@@ -119,7 +121,6 @@ function logExtensionsAdded() {
       emojiStyle
     )
   );
-
   console.groupEnd();
 }
 
