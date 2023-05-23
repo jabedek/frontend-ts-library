@@ -18,7 +18,4 @@ export declare type DeepFlatten<T> = {
 /**
  * Represents a callback function provided as argument to another one. Takes 2 arguments - `A` & `R` - for parameters and return types respectively.
  */
-export declare type CallbackFn<P extends Params = unknown[], R extends any = void> = (...args: P) => R;
-declare type Params = Partial<Parameters<typeof Cb1>>;
-declare const Cb1: <T extends unknown>(...args: T[]) => void;
-export {};
+export declare type CallbackFn<R extends any = void> = (...args: any) => R;
