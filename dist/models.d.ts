@@ -1,3 +1,13 @@
+/**
+ * Takes a type T and flattens its type hierarchy by combining all of its properties into a single, non-nested type.
+ *
+ * No need to lookup a chain of interfaces and guess what remains.
+ *
+ * @see https://www.youtube.com/watch?v=2lCCKiWGlC0
+ */
+export declare type Flatten<T> = {
+    [K in keyof T]: T[K];
+} & {};
 export declare type CallbackFn<R extends any = void> = (...args: any) => R;
 export declare type TimeUnit = "seconds" | "minutes" | "hours";
 export declare type CountryCode = "PL" | "DE";

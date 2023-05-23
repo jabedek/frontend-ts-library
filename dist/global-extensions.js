@@ -1,11 +1,19 @@
 import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, roundPreciseFn, } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
+const logs = [];
 function logExtensionAdded(objName, fnName) {
-    const emojiStyle = "background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px; font-weight: 600; height: 24px;";
-    const nameStyle = "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; font-weight: 600; height: 24px;";
-    const defaultStyle = "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; height: 24px;";
-    console.log(`%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`, emojiStyle, nameStyle, defaultStyle, nameStyle, emojiStyle);
+    const emojiStyle = "background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px; font-weight: 600; height: 20px;";
+    const nameStyle = "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; font-weight: 600; height: 20px;";
+    const defaultStyle = "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; height: 20px;";
+    logs.push([
+        `%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`,
+        emojiStyle,
+        nameStyle,
+        defaultStyle,
+        nameStyle,
+        emojiStyle,
+    ]);
 }
 /** Math */
 if (!Math.randomInt) {
@@ -61,4 +69,7 @@ if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
         promiseUtilsProtected.fireAndForgetFn(this, printError);
     };
 }
+console.group();
+logs.forEach((log) => console.log(log));
+console.groupEnd();
 //# sourceMappingURL=global-extensions.js.map

@@ -96,23 +96,26 @@ declare global {
   }
 }
 
+const logs: [string, string, string, string, string, string][] = [];
+
 function logExtensionAdded(objName: string, fnName: string) {
   const emojiStyle =
-    "background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px; font-weight: 600; height: 24px;";
+    "background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px; font-weight: 600; height: 20px;";
 
   const nameStyle =
-    "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; font-weight: 600; height: 24px;";
+    "color: lightgreen; background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; font-weight: 600; height: 20px;";
 
   const defaultStyle =
-    "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 13px; padding: 6px 3.2px; height: 24px;";
-  console.log(
+    "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; height: 20px;";
+
+  logs.push([
     `%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`,
     emojiStyle,
     nameStyle,
     defaultStyle,
     nameStyle,
-    emojiStyle
-  );
+    emojiStyle,
+  ]);
 }
 
 /** Math */
@@ -188,3 +191,7 @@ if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
     promiseUtilsProtected.fireAndForgetFn(this, printError);
   };
 }
+
+console.group();
+logs.forEach((log) => console.log(log));
+console.groupEnd();
