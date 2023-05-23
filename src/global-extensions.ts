@@ -122,6 +122,11 @@ function logExtensionsAdded() {
       emojiStyle
     )
   );
+  console.log(
+    `&cThat's only those added to global objects. Check out what else is new at: https://www.npmjs.com/package/frotsi`,
+    defaultStyle
+  );
+
   console.groupEnd();
 }
 
