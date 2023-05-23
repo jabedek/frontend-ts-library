@@ -1,10 +1,12 @@
 # ✨Frontend TS Library - Frotsi ✨
 
-## _Extra Sh!t for Frontend Development!_
+## _Extra Stuff for Frontend Development!_
 
 Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Besides that it adds some additional utils for various areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
 ## Features
+
+### Functions
 
 - Extending **JS.Math** with functions: **randomInt, roundPrecise**
 - Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
@@ -14,6 +16,10 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Providing functions related to HTML: **generateInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
 - **loop** iterator so you don't have to iterate over spread unfilled Arrays anymore
+
+### Types
+
+- **Flatten** - Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type. _Borrowed from TypeScript Grand Wizard **Matt Pocock** (he calls it Prettify, see here: https://www.youtube.com/watch?v=2lCCKiWGlC0)._
 
 ## Installation
 

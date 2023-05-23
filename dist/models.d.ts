@@ -1,14 +1,11 @@
 /**
- * Takes a type T and flattens its type hierarchy by combining all of its properties into a single, non-nested type.
- *
- * No need to lookup a chain of interfaces and guess what remains.
+ * Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type.
  *
  * @see https://www.youtube.com/watch?v=2lCCKiWGlC0
  */
 export declare type Flatten<T> = {
     [K in keyof T]: T[K];
 } & {};
-export declare type CallbackFn<R extends any = void> = (...args: any) => R;
 export declare type TimeUnit = "seconds" | "minutes" | "hours";
 export declare type CountryCode = "PL" | "DE";
 export declare type ArrayElement = Record<string, any> | string | number | boolean;
@@ -24,3 +21,4 @@ export interface SymmetricalDifferences<T> {
     diffBase: T[];
     diffCompared: T[];
 }
+export declare type CallbackFn<R extends any = void, P extends unknown[] = []> = (...args: P) => R;
