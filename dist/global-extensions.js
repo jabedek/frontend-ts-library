@@ -8,7 +8,7 @@ function logExtensionsAdded() {
     const nameStyle2 = "color: lightsalmon; background: rgba(10,0,0,0.5); font-size: 12px; text-shadow:1px 1px 2px rgba(255,255,0,0.75); padding: 6px 1px; font-weight: 600; height: 20px;";
     const defaultStyle = "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 12px; text-shadow:1px 1px 2px rgba(255,255,0,0.75); padding: 6px; height: 20px;";
     console.groupCollapsed("New functions successfully added to your project:");
-    logs.forEach(({ fnName, objName }) => console.log(`%c🎉%cadded %c${objName}%c[${fnName}]%c🎉`, emojiStyle, defaultStyle, nameStyle2, nameStyle, emojiStyle));
+    logs.forEach(({ fnName, objName }) => console.log(`%c🎉%cAdded %c${objName}%c[${fnName}]`, emojiStyle, defaultStyle, nameStyle2, nameStyle));
     console.log(`&cThat's only those added to global objects. Check out what else is new at: https://www.npmjs.com/package/frotsi`, defaultStyle);
     console.groupEnd();
 }

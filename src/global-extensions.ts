@@ -114,12 +114,11 @@ function logExtensionsAdded() {
   console.groupCollapsed("New functions successfully added to your project:");
   logs.forEach(({ fnName, objName }) =>
     console.log(
-      `%c🎉%cadded %c${objName}%c[${fnName}]%c🎉`,
+      `%c🎉%cAdded %c${objName}%c[${fnName}]`,
       emojiStyle,
       defaultStyle,
       nameStyle2,
-      nameStyle,
-      emojiStyle
+      nameStyle
     )
   );
   console.log(
