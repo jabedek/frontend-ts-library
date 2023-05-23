@@ -11,8 +11,14 @@ import {
   stopListening,
   loop,
 } from "./utils/utils.index";
-
-import { CallbackFn, TimeUnit, Flatten } from "./models";
+import { CallbackFn, Flatten } from "./types";
+import {
+  TimeUnit,
+  Direction,
+  CountryCode,
+  ArrayElement,
+  SymmetricalDifferences,
+} from "./models";
 export {
   randomIntFn,
   normalizeCountryCharsFn,
@@ -25,7 +31,15 @@ export {
   loop,
 };
 
-export { CallbackFn, TimeUnit, Flatten };
+export {
+  CallbackFn,
+  Flatten,
+  TimeUnit,
+  Direction,
+  CountryCode,
+  ArrayElement,
+  SymmetricalDifferences,
+};
 
 function extract() {
   import("./global-extensions");
