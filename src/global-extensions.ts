@@ -193,5 +193,5 @@ if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
 }
 
 console.group();
-logs.forEach((log) => console.log(log));
+logs.forEach((log) => console.log([...log]));
 console.groupEnd();
