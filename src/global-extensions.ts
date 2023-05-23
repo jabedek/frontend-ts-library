@@ -96,9 +96,9 @@ declare global {
   }
 }
 
-const logs: [string, string, string, string, string, string][] = [];
+const logs: { objName: string; fnName: string }[] = [];
 
-function logExtensionAdded(objName: string, fnName: string) {
+function logExtensionsAdded() {
   const emojiStyle =
     "background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px; font-weight: 600; height: 20px;";
 
@@ -108,30 +108,35 @@ function logExtensionAdded(objName: string, fnName: string) {
   const defaultStyle =
     "color: rgba(200,200,230,1); background: rgba(10,0,0,0.5); font-size: 11px; padding: 6px 3.2px; height: 20px;";
 
-  logs.push([
-    `%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`,
-    emojiStyle,
-    nameStyle,
-    defaultStyle,
-    nameStyle,
-    emojiStyle,
-  ]);
+  console.group();
+  logs.forEach(({ fnName, objName }) =>
+    console.log(
+      `%c🎉%c${fnName}%cwas successfully set as new property to%c${objName}%c🎉`,
+      emojiStyle,
+      nameStyle,
+      defaultStyle,
+      nameStyle,
+      emojiStyle
+    )
+  );
+
+  console.groupEnd();
 }
 
 /** Math */
 if (!Math.randomInt) {
   Math.randomInt = randomIntFn;
-  logExtensionAdded("Math", "randomInt");
+  logs.push({ objName: "Math", fnName: "randomInt" });
 }
 
 if (!Math.roundPrecise) {
   Math.roundPrecise = roundPreciseFn;
-  logExtensionAdded("Math", "roundPrecise");
+  logs.push({ objName: "Math", fnName: "roundPrecise" });
 }
 
 /** String */
 if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
-  logExtensionAdded("String", "normalizeCountryChars");
+  logs.push({ objName: "String", fnName: "normalizeCountryChars" });
   String.prototype.normalizeCountryChars = function (
     countryCode: CountryCode
   ): string {
@@ -140,7 +145,7 @@ if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
 }
 
 if (!String.prototype.hasOwnProperty("longestSubstring")) {
-  logExtensionAdded("String", "longestSubstring");
+  logs.push({ objName: "String", fnName: "longestSubstring" });
   String.prototype.longestSubstring = async function (): Promise<string> {
     return longestSubstringFn(this.toString());
   };
@@ -148,28 +153,28 @@ if (!String.prototype.hasOwnProperty("longestSubstring")) {
 
 /** Array */
 if (!Array.prototype.hasOwnProperty("sortNumbers")) {
-  logExtensionAdded("Array", "sortNumbers");
+  logs.push({ objName: "Array", fnName: "sortNumbers" });
   Array.prototype.sortNumbers = function (): number[] {
     return arrayUtilsProtected.sortNumbersFn(this);
   };
 }
 
 if (!Array.prototype.hasOwnProperty("random")) {
-  logExtensionAdded("Array", "random");
+  logs.push({ objName: "Array", fnName: "random" });
   Array.prototype.random = function <T>(amount?: number): T[] {
     return arrayUtilsProtected.randomFn(this, amount);
   };
 }
 
 if (!Array.prototype.hasOwnProperty("popRandom")) {
-  logExtensionAdded("Array", "popRandom");
+  logs.push({ objName: "Array", fnName: "popRandom" });
   Array.prototype.popRandom = function <T>(): T | undefined {
     return arrayUtilsProtected.popRandomFn<T>(this);
   };
 }
 
 if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
-  logExtensionAdded("Array", "symmetricDifference");
+  logs.push({ objName: "Array", fnName: "symmetricDifference" });
   Array.prototype.symmetricDifference = function <T extends ArrayElement>(
     comparedArray: T[],
     compareObjectsWithoutIdKey?: boolean,
@@ -186,12 +191,10 @@ if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
 
 /** Promise */
 if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
-  logExtensionAdded("Promise", "fireAndForget");
+  logs.push({ objName: "Promise", fnName: "fireAndForget" });
   Promise.prototype.fireAndForget = function (printError = false): void {
     promiseUtilsProtected.fireAndForgetFn(this, printError);
   };
 }
 
-console.group();
-logs.forEach((log) => console.log([...log]));
-console.groupEnd();
+logExtensionsAdded();
