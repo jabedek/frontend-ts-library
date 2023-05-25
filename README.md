@@ -1,6 +1,8 @@
-# ✨Frontend TS Library - Frotsi ✨
+# ✨FROTSI - Frontend TS Library ✨
 
 ## _Extra Stuff for Frontend Development!_
+
+This package should not be taken very seriously BUT it does provide many useful features.
 
 Frotsi provides basic extensions for Math, Promise, String, Array globals objects. Besides that it adds some additional utils for various areas. All these functions will amp your work on building components/views/custom-html-elements etc.
 
@@ -15,7 +17,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Providing functions related to time: **convertTime**
 - Providing functions related to HTML: **generateInputId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
-- **loop** iterator so you don't have to iterate over spreaded unfilled Arrays anymore
+- **loop** iterator so you don't have to iterate over spreaded & unfilled Arrays anymore
 
 ### Types
 
