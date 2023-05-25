@@ -5,5 +5,6 @@
  */
 export declare const loop: (amount: number) => {
     [Symbol.iterator](): Generator<number, void, unknown>;
+    map<T extends unknown>(cb: (index: number) => T): T[];
     forEach(cb: (index: number) => void): void;
 };

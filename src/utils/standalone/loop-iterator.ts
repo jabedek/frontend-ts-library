@@ -13,7 +13,13 @@ export const loop = (amount: number) => {
         internalIndex++;
       }
     },
-
+    map<T extends unknown>(cb: (index: number) => T) {
+      const arr = [];
+      for (const _ of this) {
+        arr.push(cb(internalIndex));
+      }
+      return arr;
+    },
     forEach(cb: (index: number) => void) {
       for (const _ of this) {
         cb(internalIndex);

@@ -13,6 +13,13 @@ export const loop = (amount) => {
                 internalIndex++;
             }
         },
+        map(cb) {
+            const arr = [];
+            for (const _ of this) {
+                arr.push(cb(internalIndex));
+            }
+            return arr;
+        },
         forEach(cb) {
             for (const _ of this) {
                 cb(internalIndex);
