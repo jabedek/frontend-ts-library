@@ -3,7 +3,6 @@ import {
   randomIntFn,
   normalizeCountryCharsFn,
   longestSubstringFn,
-  roundPreciseFn,
 } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
@@ -21,19 +20,6 @@ declare global {
      *          If `minIncl` is greater than `maxIncl`, they will be swaped and process continues normally.
      */
     randomInt(minIncl: number, maxIncl: number): number;
-    /**
-     * Rounds a rational number to a specified decimal precision, either up or down.
-     *
-     * @param rationalNumber The rational number to round.
-     * @param dir The rounding direction. "up" for rounding up, "down" for rounding down.
-     * @param decimalPrecision The number of decimal places to round to. Default is 0.
-     * @returns The rounded number.
-     */
-    roundPrecise(
-      rationalNumber: number,
-      dir: "up" | "down",
-      decimalPrecision: number
-    ): number;
   }
 
   interface String {
@@ -133,11 +119,6 @@ function logExtensionsAdded() {
 if (!Math.randomInt) {
   Math.randomInt = randomIntFn;
   logs.push({ objName: "Math", fnName: "randomInt" });
-}
-
-if (!Math.roundPrecise) {
-  Math.roundPrecise = roundPreciseFn;
-  logs.push({ objName: "Math", fnName: "roundPrecise" });
 }
 
 /** String */

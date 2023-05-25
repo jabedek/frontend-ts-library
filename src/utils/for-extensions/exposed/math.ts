@@ -14,16 +14,3 @@ export function randomIntFn(minIncl = 1, maxIncl = 100): number {
 
   return Math.floor(Math.random() * (maxIncl - minIncl) + (minIncl + 1));
 }
-
-export function roundPreciseFn(
-  rationalNumber: number,
-  dir: "up" | "down",
-  decimalPrecision = 0
-): number {
-  if (dir === "up") {
-    const power = Math.pow(10, decimalPrecision);
-    return Math.ceil(rationalNumber * power) / power;
-  } else {
-    return Number(Number(rationalNumber).toFixed(decimalPrecision));
-  }
-}

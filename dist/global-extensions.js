@@ -1,4 +1,4 @@
-import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, roundPreciseFn, } from "./utils/utils.index";
+import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
 const logs = [];
@@ -16,10 +16,6 @@ function logExtensionsAdded() {
 if (!Math.randomInt) {
     Math.randomInt = randomIntFn;
     logs.push({ objName: "Math", fnName: "randomInt" });
-}
-if (!Math.roundPrecise) {
-    Math.roundPrecise = roundPreciseFn;
-    logs.push({ objName: "Math", fnName: "roundPrecise" });
 }
 /** String */
 if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {

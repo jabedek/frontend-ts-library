@@ -5,11 +5,6 @@ export {};
 declare global {
   interface Math {
     randomInt(minIncl: number, maxIncl: number): number;
-    roundPrecise(
-      rationalNumber: number,
-      dir: "up" | "down",
-      decimalPrecision: number
-    ): number;
   }
 
   interface String {

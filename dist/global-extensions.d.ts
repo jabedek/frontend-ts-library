@@ -11,15 +11,6 @@ declare global {
          *          If `minIncl` is greater than `maxIncl`, they will be swaped and process continues normally.
          */
         randomInt(minIncl: number, maxIncl: number): number;
-        /**
-         * Rounds a rational number to a specified decimal precision, either up or down.
-         *
-         * @param rationalNumber The rational number to round.
-         * @param dir The rounding direction. "up" for rounding up, "down" for rounding down.
-         * @param decimalPrecision The number of decimal places to round to. Default is 0.
-         * @returns The rounded number.
-         */
-        roundPrecise(rationalNumber: number, dir: "up" | "down", decimalPrecision: number): number;
     }
     interface String {
         /**

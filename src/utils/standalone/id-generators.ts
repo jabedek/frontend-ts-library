@@ -1,7 +1,7 @@
 import "../../global-extensions";
 
 /** Produces ID for HTML input and label based on provided `dataName` and `inputType` and some randomness.
- * @Example `@id_4796_5196_input_text_data_project_title`
+ * @Example `@id_4796_5196_input_select_data_project-role`
  */
 export function generateInputId(dataName: string, inputType: string): string {
   const randomness = `${Math.randomInt(1000, 9999)}-${Math.randomInt(
