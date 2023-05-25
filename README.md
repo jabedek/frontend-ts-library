@@ -32,8 +32,7 @@ For example in Angular it would be **main.ts**, in React **main.tsx**:
 
 ```sh
 import 'frotsi';
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import ...
 ...
 ```
 
