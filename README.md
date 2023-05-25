@@ -41,19 +41,22 @@ import ...
 After installing and importing, use it anywhere in your app, like so:
 
 ```sh
-Math.randomInt(1, 2)
-convertTime('fromMS', 3000, 'seconds') // --> '3'
-convertTime('toMS', 1, 'hours') // --> '3600000'
-'Żółć'.normalizeCountryChars('PL') // --> 'zolc'
-await 'asdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj wefiuhjabeasdaasdbeasdabev'.longestSubstring()
-[13,67,4,24,566].sortNumbers()
-[1, 2, 3].random()
-[1, 2, 3].random(2)
-[1, 2, 3].popRandom()
-[1, 2, 3].symmetricDifference([1, 2, 3, 3, 4])
-generateInputId('select', 'project-role') // --> '@id_4796_5196_input_select_data_project-role'
-generateDocumentId() // --> '20230525_022358_902Z_420'
-Promise( ... ).fireAndForget()
-loop(5).forEach(index => { ... })
-loop(5).map(index => { return { index } }) // --> '{index: number}[]'
+Math.randomInt(1, 2);                               // --> '1' OR '2'
+convertTime('fromMS', 3000, 'seconds');             // --> '3'
+convertTime('toMS', 1, 'hours');                    // --> '3600000'
+'Żółć'.normalizeCountryChars('PL');                 // --> 'zolc'
+await 'asdasdbjasdhjbehbdasdj
+wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj
+wefiuhjabeasdaasdbeasdabev'.longestSubstring();     // --> 'sdabev'
+[13,67,4,24,566].sortNumbers();                     // --> '[4, 13, 24, 67, 566]'
+[1, 2, 3].random();                                 // -->  get one of provided
+[1, 2, 3].random(2);                                // --> get two of provided
+[1, 2, 3].popRandom();                              // --> pop one of provided
+[1, 2, 3].symmetricDifference([1, 2, 3, 3, 4]);     // --> '{ diffBase: [], diffCompared: [4] }'
+generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_select_data_project-role'
+generateDocumentId();                               // --> '20230525_022358_902Z_420'
+new Promise( ... ).fireAndForget();                 // --> 'undefined' - simply fires a Promise
+new Promise( ... ).fireAndForget(true);             // --> 'undefined' - simply fires a Promise + logs errors
+loop(5).forEach(index => { ... });                  // --> 'undefined' - loops 5 times
+loop(5).map(index => { return { index } });         // --> '{index: number}[]' - loop 5 times and returns 5-element typed array
 ```
