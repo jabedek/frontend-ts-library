@@ -41,22 +41,31 @@ import ...
 After installing and importing, use it anywhere in your app, like so:
 
 ```sh
+MATH:
 Math.randomInt(1, 2);                               // --> '1' OR '2'
 convertTime('fromMS', 3000, 'seconds');             // --> '3'
 convertTime('toMS', 1, 'hours');                    // --> '3600000'
+
+STRING:
 'Żółć'.normalizeCountryChars('PL');                 // --> 'zolc'
 await 'asdasdbjasdhjbehbdasdj
 wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj
 wefiuhjabeasdaasdbeasdabev'.longestSubstring();     // --> 'sdabev'
+
+ARRAY:
 [13,67,4,24,566].sortNumbers();                     // --> '[4, 13, 24, 67, 566]'
 [1, 2, 3].random();                                 // -->  get one of provided
 [1, 2, 3].random(2);                                // --> get two of provided
 [1, 2, 3].popRandom();                              // --> pop one of provided
 [1, 2, 3].symmetricDifference([1, 2, 3, 3, 4]);     // --> '{ diffBase: [], diffCompared: [4] }'
-generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_select_data_project-role'
-generateDocumentId();                               // --> '20230525_022358_902Z_420'
+
+PROMISE:
 new Promise( ... ).fireAndForget();                 // --> 'undefined' - simply fires a Promise
 new Promise( ... ).fireAndForget(true);             // --> 'undefined' - simply fires a Promise + logs errors
+
+OTHER:
+generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_select_data_project-role'
+generateDocumentId();                               // --> '20230525_022358_902Z_420'
 loop(5).forEach(index => { ... });                  // --> 'undefined' - loops 5 times
-loop(5).map(index => { return { index } });         // --> '{index: number}[]' - loop 5 times and returns 5-element typed array
+loop(5).map(index => ({index: `${index}`}));        // --> '{index: string}[]' - loop 5 times and returns 5-element typed array
 ```
