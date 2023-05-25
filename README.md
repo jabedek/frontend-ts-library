@@ -55,5 +55,5 @@ generateInputId('select', 'project-role') // --> '@id_4796_5196_input_select_dat
 generateDocumentId() // --> '20230525_022358_902Z_420'
 Promise( ... ).fireAndForget()
 loop(5).forEach(index => { ... })
-loop(5).map(index => { return { index } })
+loop(5).map(index => { return { index } }) // --> '{index: number}[]'
 ```
