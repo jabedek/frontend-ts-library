@@ -54,7 +54,7 @@ wefiuhjabeasdaasdbeasdabev'.longestSubstring();     // --> 'sdabev'
 
 ARRAY:
 [13,67,4,24,566].sortNumbers();                     // --> '[4, 13, 24, 67, 566]'
-[1, 2, 3].random();                                 // -->  get one of provided
+[1, 2, 3].random();                                 // --> get one of provided
 [1, 2, 3].random(2);                                // --> get two of provided
 [1, 2, 3].popRandom();                              // --> pop one of provided
 [1, 2, 3].symmetricDifference([1, 2, 3, 3, 4]);     // --> '{ diffBase: [], diffCompared: [4] }'
