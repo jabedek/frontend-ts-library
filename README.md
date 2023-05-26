@@ -21,7 +21,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 
 ### Types
 
-- **Flatten** - Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type. _Borrowed from TypeScript Grand Wizard **Matt Pocock** [@mattpocock] (he calls it Prettify, see here: https://www.youtube.com/watch?v=2lCCKiWGlC0 )_.
+- **Flatten** - Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type. _Borrowed from TypeScript Grand Wizard **Matt Pocock** [@mattpocock] (https://www.github.com/mattpocock) (he calls it Prettify, see here: https://www.youtube.com/watch?v=2lCCKiWGlC0 )_.
 - **DeepFlatten** - Does what `Flatten` sometimes can't in more complicated and nested object types.
 - **CallbackFn** - Represents a callback function provided as argument to another one. Takes 1 type parameter - `R` - for return type.
 
