@@ -4,7 +4,7 @@ Replaces Polish letters with their Latin equivalents.
 @returns The normalized string.
 */
 const normalizePolish = (text = "") => {
-    const normalizedText = text === null || text === void 0 ? void 0 : text.replace("ą", "a").replace("ć", "c").replace("ę", "e").replace("ł", "l").replace("ń", "n").replace("ó", "o").replace("ś", "s").replace("ź", "z").replace("ż", "z");
+    const normalizedText = text === null || text === void 0 ? void 0 : text.replace("Ą", "A").replace("Ć", "C").replace("Ę", "E").replace("Ł", "L").replace("Ń", "N").replace("Ó", "O").replace("Ś", "S").replace("Ź", "Z").replace("Ż", "Z").replace("ą", "a").replace("ć", "c").replace("ę", "e").replace("ł", "l").replace("ń", "n").replace("ó", "o").replace("ś", "s").replace("ź", "z").replace("ż", "z");
     return normalizedText;
 };
 /**
@@ -13,18 +13,23 @@ Replaces German letters with their Latin equivalents.
 @returns The normalized string.
 */
 const normalizeGerman = (text = "") => {
-    const normalizedText = text === null || text === void 0 ? void 0 : text.replace("ä", "a").replace("ö", "o").replace("ü", "u").replace("ß", "ss");
+    const normalizedText = text === null || text === void 0 ? void 0 : text.replace("Ä", "A").replace("Ö", "O").replace("Ü", "U").replace("ẞ", "SS").replace("ä", "a").replace("ö", "o").replace("ü", "u").replace("ß", "ss");
     return normalizedText;
 };
-export function normalizeCountryCharsFn(text, countryCode) {
+export function normalizeCountryCharsFn(text, countryCode, keepCapitals = false) {
+    let transformedText = text;
+    if (!keepCapitals) {
+        transformedText = transformedText.toLocaleLowerCase(countryCode);
+    }
     switch (countryCode) {
         case "PL":
-            return normalizePolish(text);
+            transformedText = normalizePolish(text);
         case "DE":
-            return normalizeGerman(text);
+            transformedText = normalizeGerman(text);
         default:
-            return text;
+            transformedText = text;
     }
+    return transformedText;
 }
 export async function longestSubstringFn(s) {
     return new Promise((resolve) => {

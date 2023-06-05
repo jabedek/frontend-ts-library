@@ -7,7 +7,17 @@ Replaces Polish letters with their Latin equivalents.
 */
 const normalizePolish = (text = ""): string => {
   const normalizedText = text
-    ?.replace("ą", "a")
+    ?.replace("Ą", "A")
+    .replace("Ć", "C")
+    .replace("Ę", "E")
+    .replace("Ł", "L")
+    .replace("Ń", "N")
+    .replace("Ó", "O")
+    .replace("Ś", "S")
+    .replace("Ź", "Z")
+    .replace("Ż", "Z")
+    //
+    .replace("ą", "a")
     .replace("ć", "c")
     .replace("ę", "e")
     .replace("ł", "l")
@@ -27,7 +37,12 @@ Replaces German letters with their Latin equivalents.
 */
 const normalizeGerman = (text = ""): string => {
   const normalizedText = text
-    ?.replace("ä", "a")
+    ?.replace("Ä", "A")
+    .replace("Ö", "O")
+    .replace("Ü", "U")
+    .replace("ẞ", "SS")
+    //
+    .replace("ä", "a")
     .replace("ö", "o")
     .replace("ü", "u")
     .replace("ß", "ss");
@@ -37,16 +52,25 @@ const normalizeGerman = (text = ""): string => {
 
 export function normalizeCountryCharsFn(
   text: string,
-  countryCode: CountryCode
+  countryCode: CountryCode,
+  keepCapitals = false
 ): string {
+  let transformedText = text;
+
+  if (!keepCapitals) {
+    transformedText = transformedText.toLocaleLowerCase(countryCode);
+  }
+
   switch (countryCode) {
     case "PL":
-      return normalizePolish(text);
+      transformedText = normalizePolish(text);
     case "DE":
-      return normalizeGerman(text);
+      transformedText = normalizeGerman(text);
     default:
-      return text;
+      transformedText = text;
   }
+
+  return transformedText;
 }
 
 export async function longestSubstringFn(s: string): Promise<string> {
