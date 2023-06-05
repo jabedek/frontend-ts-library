@@ -43,8 +43,6 @@ After installing and importing, use it anywhere in your app, like so:
 ```sh
 MATH:
 Math.randomInt(1, 2);                               // --> '1' OR '2'
-convertTime('fromMS', 3000, 'seconds');             // --> '3'
-convertTime('toMS', 1, 'hours');                    // --> '3600000'
 
 STRING:
 'Möbelträgerfüße'.normalizeCountryChars('DE');                 // --> 'mobeltragerfusse'
@@ -70,4 +68,6 @@ generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_
 generateDocumentId();                               // --> '20230525_022358_902Z_420'
 loop(5).forEach(index => { ... });                  // --> 'undefined' - loops 5 times
 loop(5).map(index => ({index: `${index}`}));        // --> '{index: string}[]' - loop 5 times and returns 5-element typed array
+convertTime('fromMS', 3000, 'seconds');             // --> '3'
+convertTime('toMS', 1, 'hours');                    // --> '3600000'
 ```
