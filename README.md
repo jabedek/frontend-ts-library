@@ -15,9 +15,9 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to time: **convertTime**
-- Providing functions related to generating randomness: **generateInputId** (useful for html inputs), **generateDocumentId**
+- Providing functions related to generating random IDs: **generateInputId** (useful for html inputs), **generateDocumentId**
 - Providing functions related to HTTP: **startListening** (listening at current page)
-- **loop** iterator so you don't have to iterate over spreaded & unfilled Arrays anymore
+- **loop** iterator so you don't have to iterate over unfilled Arrays anymore
 
 ### Types
 
@@ -45,9 +45,9 @@ MATH:
 Math.randomInt(1, 2);                               // --> '1' OR '2'
 
 STRING:
-'Möbelträgerfüße'.normalizeCountryChars('DE');                 // --> 'mobeltragerfusse'
+'Möbelträgerfüße'.normalizeCountryChars('DE');      // --> 'mobeltragerfusse'
 'Żółć'.normalizeCountryChars('PL');                 // --> 'zolc'
-'Żółć'.normalizeCountryChars('PL', true);                 // --> 'Zolc'
+'Żółć'.normalizeCountryChars('PL', true);           // --> 'Zolc'
 await 'asdasdbjasdhjbehbdasdj
 wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj
 wefiuhjabeasdaasdbeasdabev'.longestSubstring();     // --> 'sdabev'
