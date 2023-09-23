@@ -1,15 +1,10 @@
-import { CountryCode, SymmetricalDifferences } from "./models";
+import { SymmetricalDifferences } from "./models";
 
 export {};
 
 declare global {
   interface Math {
     randomInt(minIncl: number, maxIncl: number): number;
-  }
-
-  interface String {
-    normalizeCountryChars(countryCode: CountryCode): string;
-    longestSubstring(): Promise<string>;
   }
 
   interface Array<T> {

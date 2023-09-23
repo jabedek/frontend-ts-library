@@ -1,4 +1,4 @@
-import { CountryCode, SymmetricalDifferences } from "./models";
+import { SymmetricalDifferences } from "./models";
 export {};
 declare global {
     interface Math {
@@ -11,19 +11,6 @@ declare global {
          *          If `minIncl` is greater than `maxIncl`, they will be swaped and process continues normally.
          */
         randomInt(minIncl: number, maxIncl: number): number;
-    }
-    interface String {
-        /**
-         * Returns the string with the specified country's characters normalized.
-         * @param {CountryCode} countryCode - The country code of the text to be normalized.
-         * @returns The normalized string.
-         */
-        normalizeCountryChars(countryCode: CountryCode): string;
-        /**
-         * Finds the longest substring of a given string without repeating characters.
-         * @returns {Promise<string>} - A Promise that resolves to a string representing the longest substring without repeating characters.
-         */
-        longestSubstring(): Promise<string>;
     }
     interface Array<T> {
         /**

@@ -1,4 +1,4 @@
-import { randomIntFn, normalizeCountryCharsFn, longestSubstringFn, } from "./utils/utils.index";
+import { randomIntFn } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
 const logs = [];
@@ -16,19 +16,6 @@ function logExtensionsAdded() {
 if (!Math.randomInt) {
     Math.randomInt = randomIntFn;
     logs.push({ objName: "Math", fnName: "randomInt" });
-}
-/** String */
-if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
-    logs.push({ objName: "String", fnName: "normalizeCountryChars" });
-    String.prototype.normalizeCountryChars = function (countryCode) {
-        return normalizeCountryCharsFn(this.toString(), countryCode);
-    };
-}
-if (!String.prototype.hasOwnProperty("longestSubstring")) {
-    logs.push({ objName: "String", fnName: "longestSubstring" });
-    String.prototype.longestSubstring = async function () {
-        return longestSubstringFn(this.toString());
-    };
 }
 /** Array */
 if (!Array.prototype.hasOwnProperty("sortNumbers")) {

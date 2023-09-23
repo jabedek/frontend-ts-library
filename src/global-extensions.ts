@@ -1,9 +1,5 @@
-import { ArrayElement, CountryCode, SymmetricalDifferences } from "./models";
-import {
-  randomIntFn,
-  normalizeCountryCharsFn,
-  longestSubstringFn,
-} from "./utils/utils.index";
+import { ArrayElement, SymmetricalDifferences } from "./models";
+import { randomIntFn } from "./utils/utils.index";
 import { default as arrayUtilsProtected } from "./utils/for-extensions/protected/array";
 import { default as promiseUtilsProtected } from "./utils/for-extensions/protected/promise";
 
@@ -20,20 +16,6 @@ declare global {
      *          If `minIncl` is greater than `maxIncl`, they will be swaped and process continues normally.
      */
     randomInt(minIncl: number, maxIncl: number): number;
-  }
-
-  interface String {
-    /**
-     * Returns the string with the specified country's characters normalized.
-     * @param {CountryCode} countryCode - The country code of the text to be normalized.
-     * @returns The normalized string.
-     */
-    normalizeCountryChars(countryCode: CountryCode): string;
-    /**
-     * Finds the longest substring of a given string without repeating characters.
-     * @returns {Promise<string>} - A Promise that resolves to a string representing the longest substring without repeating characters.
-     */
-    longestSubstring(): Promise<string>;
   }
 
   interface Array<T> {
@@ -119,23 +101,6 @@ function logExtensionsAdded() {
 if (!Math.randomInt) {
   Math.randomInt = randomIntFn;
   logs.push({ objName: "Math", fnName: "randomInt" });
-}
-
-/** String */
-if (!String.prototype.hasOwnProperty("normalizeCountryChars")) {
-  logs.push({ objName: "String", fnName: "normalizeCountryChars" });
-  String.prototype.normalizeCountryChars = function (
-    countryCode: CountryCode
-  ): string {
-    return normalizeCountryCharsFn(this.toString(), countryCode);
-  };
-}
-
-if (!String.prototype.hasOwnProperty("longestSubstring")) {
-  logs.push({ objName: "String", fnName: "longestSubstring" });
-  String.prototype.longestSubstring = async function (): Promise<string> {
-    return longestSubstringFn(this.toString());
-  };
 }
 
 /** Array */
