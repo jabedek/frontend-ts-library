@@ -5,7 +5,10 @@ function popRandomFn(originalArray) {
     const randomIndex = Math.randomInt(0, originalArray.length - 1);
     return originalArray.splice(randomIndex, 1)[0];
 }
-function randomFn(originalArray, amount = 1) {
+function randomFn(originalArray, amount) {
+    if (!amount) {
+        amount = 1;
+    }
     if (!originalArray || amount <= 0) {
         return [];
     }

@@ -9,7 +9,10 @@ function popRandomFn<T>(originalArray: T[]): T | undefined {
   return originalArray.splice(randomIndex, 1)[0];
 }
 
-function randomFn<T>(originalArray: T[], amount = 1): T[] {
+function randomFn<T>(originalArray: T[], amount?: number): T[] {
+  if (!amount) {
+    amount = 1;
+  }
   if (!originalArray || amount <= 0) {
     return [];
   }
