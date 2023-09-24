@@ -29,7 +29,7 @@ declare global {
          * @param amount The number of random elements to choose from the array. Default is 0 (return one random element).
          * @returns An array of random elements from the input array.
          */
-        random(amount: number): T[];
+        random(amount?: number): T[];
         /**
          * Compares two arrays of objects and returns the differences between them.
          *

@@ -9,7 +9,7 @@ declare global {
 
   interface Array<T> {
     sortNumbers(): T[];
-    random(amount: number): T[];
+    random(amount?: number): T[];
     popRandom(): T | undefined;
     symmetricDifference(
       comparedArray: T[],
