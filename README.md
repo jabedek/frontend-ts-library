@@ -11,19 +11,15 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 ### Functions
 
 - Extending **JS.Math** with functions: **randomInt**
-- Extending **JS.String** with functions: **normalizeCountryChars, longestSubstring**
 - Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
 - Extending **JS.Promise** with functions: **fireAndForget**
-- Providing functions related to time: **convertTime**
 - Providing functions related to generating random IDs: **generateInputId** (useful for html inputs), **generateDocumentId**
-- Providing functions related to HTTP: **startListening** (listening at current page)
 - **loop** iterator so you don't have to iterate over unfilled Arrays anymore
 
 ### Types
 
 - **Flatten** - Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type. _Borrowed from TypeScript Grand Wizard **Matt Pocock** [@mattpocock](https://www.github.com/mattpocock) (he calls it Prettify, see here: https://www.youtube.com/watch?v=2lCCKiWGlC0 )_.
 - **DeepFlatten** - Does what `Flatten` sometimes can't in more complicated and nested object types.
-- **CallbackFn** - Represents a callback function provided as argument to another one. Takes 1 type parameter - `R` - for return type.
 
 ## Installation
 
@@ -44,14 +40,6 @@ After installing and importing, use it anywhere in your app, like so:
 MATH:
 Math.randomInt(1, 2);                               // --> '1' OR '2'
 
-STRING:
-'Möbelträgerfüße'.normalizeCountryChars('DE');      // --> 'mobeltragerfusse'
-'Żółć'.normalizeCountryChars('PL');                 // --> 'zolc'
-'Żółć'.normalizeCountryChars('PL', true);           // --> 'Zolc'
-await 'asdasdbjasdhjbehbdasdj
-wefiuhjabeasdaasdbeasdabevasdasdbjasdhjbehbdasdj
-wefiuhjabeasdaasdbeasdabev'.longestSubstring();     // --> 'sdabev'
-
 ARRAY:
 [13,67,4,24,566].sortNumbers();                     // --> '[4, 13, 24, 67, 566]'
 [1, 2, 3].random();                                 // --> get one item from provided array
@@ -68,6 +56,4 @@ generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_
 generateDocumentId();                               // --> '20230525_022358_902Z_420'
 loop(5).forEach(index => { ... });                  // --> 'undefined' - loops 5 times
 loop(5).map(index => ({index: `${index}`}));        // --> '{index: string}[]' - loop 5 times and returns 5-element typed array
-convertTime('fromMS', 3000, 'seconds');             // --> '3'
-convertTime('toMS', 1, 'hours');                    // --> '3600000'
 ```
