@@ -9,6 +9,6 @@ export function randomIntFn(minIncl = 1, maxIncl = 100) {
     }
     maxIncl = Math.floor(maxIncl);
     minIncl = Number(Number(minIncl).toFixed(0));
-    return Math.floor(Math.random() * (maxIncl - minIncl) + (minIncl + 1));
+    return Math.floor(Math.random() * (maxIncl + 1 - minIncl) + minIncl);
 }
 //# sourceMappingURL=math.js.map
