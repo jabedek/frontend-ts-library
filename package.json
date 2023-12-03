@@ -1,6 +1,6 @@
 {
   "name": "frotsi",
-  "version": "1.4.37",
+  "version": "1.4.38",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,7 +12,7 @@
     "compile": "npm run del-dist  &&  npm run upd-vers  &&  tsc",
     "pub-npm": "npm run compile  &&  npm publish",
     "pub-gh": "git add .  &&  git commit -m 'next'  &&  git push",
-    "pub-all": "npm run pub-npm  &&  npm run pub-gh"
+    "pub-all": "npm run pub-npm  &&  npm run pub-gh && node -e \"console.log('Pushed to GH ann NPM: https://www.npmjs.com/package/frotsi')\""
   },
   "_moduleAliases": {
     "@utils": "dist/utils",
