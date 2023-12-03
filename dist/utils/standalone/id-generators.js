@@ -11,14 +11,14 @@ export function generateInputId(dataName, inputType) {
 /** Produces ID based on current time and some randomness.
  * @Example `20230425_022358_902Z_420`
  */
-export function generateDocumentId() {
+export function generateDocumentId(suffix = "") {
     const regexDateTimeSeparators = new RegExp(/\-|\:/gm);
     const regexIsoStringSeparators = new RegExp(/T|\./gm);
     const [isoDate, isoTime, utcOffset] = new Date()
         .toISOString()
         .replace(regexDateTimeSeparators, "")
         .split(regexIsoStringSeparators);
-    const sanitizedDate = `${isoDate}_${isoTime}_${utcOffset}_${Math.randomInt(100, 999)}`;
+    const sanitizedDate = `${isoDate}_${isoTime}_${utcOffset}_${Math.randomInt(100, 999)}${suffix ? "_" + suffix : ""}`;
     return sanitizedDate;
 }
 //# sourceMappingURL=id-generators.js.map

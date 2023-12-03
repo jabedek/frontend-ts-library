@@ -51,4 +51,9 @@ declare global {
          */
         fireAndForget(printError?: boolean): void;
     }
+    interface LocStorage<T extends string> {
+        setItem<K = T>(key: K, value: string | NonNullable<unknown> | undefined): void;
+        getItem<K = T>(key: K, parse?: boolean): NonNullable<unknown> | string | undefined;
+        removeItem<K = T>(key: K): void;
+    }
 }

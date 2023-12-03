@@ -6,4 +6,4 @@ export declare function generateInputId(dataName: string, inputType: string): st
 /** Produces ID based on current time and some randomness.
  * @Example `20230425_022358_902Z_420`
  */
-export declare function generateDocumentId(): string;
+export declare function generateDocumentId(suffix?: string): string;
