@@ -15,13 +15,14 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to generating random IDs: **generateInputId** (useful for html inputs), **generateDocumentId**
 - **loop** iterator so you don't have to iterate over unfilled Arrays anymore
+- **LocalStorage** opinionated wrapper
 
 ### Types
 
 - **Flatten** - Takes a type T and tries to flatten its type hierarchy by combining all of its properties into a single, non-nested type. _Borrowed from TypeScript Grand Wizard **Matt Pocock** [@mattpocock](https://www.github.com/mattpocock) (he calls it Prettify, see here: https://www.youtube.com/watch?v=2lCCKiWGlC0 )_.
 - **DeepFlatten** - Does what `Flatten` sometimes can't in more complicated and nested object types.
 
-## Installation
+## Installation / Import
 
 After installing it with `npm` you should import the library at the top of your project's main (root) JS/TS file, so the global object extensions can attach themselves.
 For example in Angular it would be **main.ts**, in React **main.tsx**:
@@ -56,4 +57,5 @@ generateInputId('select', 'project-role');          // --> '@id_4796_5196_input_
 generateDocumentId();                               // --> '20230525_022358_902Z_420'
 loop(5).forEach(index => { ... });                  // --> 'undefined' - loops 5 times
 loop(5).map(index => ({index: `${index}`}));        // --> '{index: string}[]' - loop 5 times and returns 5-element typed array
+LocalStorage.setItem(`user`, {user: 'John'})
 ```
