@@ -1,5 +1,5 @@
-function setItem<T extends string>(
-  key: T,
+function setItem(
+  key: string,
   value: string | NonNullable<unknown> | undefined
 ): void {
   if (value) {
@@ -11,8 +11,8 @@ function setItem<T extends string>(
   }
 }
 
-function getItem<T extends string>(
-  key: T,
+function getItem(
+  key: string,
   parse = false
 ): NonNullable<unknown> | string | undefined {
   const itemData = localStorage.getItem(key);
@@ -24,7 +24,7 @@ function getItem<T extends string>(
   return parse ? JSON.parse(itemData) || undefined : itemData;
 }
 
-function removeItem<T extends string>(key: T): void {
+function removeItem(key: string): void {
   localStorage.removeItem(key);
 }
 
