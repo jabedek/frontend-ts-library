@@ -14,7 +14,8 @@ export function generateInputId(dataName: string, inputType: string): string {
 }
 
 /** Produces ID based on current time and some randomness.
- * @Example `20230425_022358_902Z_420`
+ * @Example `20230425_022358_ABC`
+ * @Example `20230425_022358_PQK_suffix`
  */
 export function generateDocumentId(suffix = "") {
   const regexDateTimeSeparators = new RegExp(/\-|\:/gm);
@@ -25,9 +26,16 @@ export function generateDocumentId(suffix = "") {
     .replace(regexDateTimeSeparators, "")
     .split(regexIsoStringSeparators);
 
-  const sanitizedDate = `${isoDate}_${isoTime}_${utcOffset}_${Math.randomInt(
-    100,
-    999
-  )}${suffix ? "_" + suffix : ""}`;
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  const randomLetters = Array.from(
+    { length: 3 },
+    () => letters[Math.randomInt(0, 25)]
+  )
+    .join("")
+    .toUpperCase();
+
+  const sanitizedDate = `${isoDate}_${isoTime}_${randomLetters}${
+    suffix ? "_" + suffix : ""
+  }`;
   return sanitizedDate;
 }

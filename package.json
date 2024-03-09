@@ -1,6 +1,6 @@
 {
   "name": "frotsi",
-  "version": "1.4.40",
+  "version": "1.4.41",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,7 +13,7 @@
     "pub-npm": "npm run compile && npm publish",
     "pub-gh": "git add .  &&  git commit -m 'next'  &&  git push",
     "log": "echo Published to: \u001b[32mhttps://www.npmjs.com/package/frotsi \u001b[0m ",
-    "pub-all": "npm run pub-npm  &&  npm run pub-gh && npm run log"
+    "pub-all": "npm run pub-npm  &&  npm run pub-gh  &&  npm run log"
   },
   "_moduleAliases": {
     "@utils": "dist/utils",
