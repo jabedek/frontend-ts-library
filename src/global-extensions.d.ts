@@ -9,14 +9,14 @@ declare global {
 
   interface Array<T> {
     sortNumbers(): T[];
-    random(amount?: number): T[];
     popRandom(): T | undefined;
+    random(amount?: number): T[];
+    last(newCopy?: boolean): T | undefined;
     symmetricDifference(
       comparedArray: T[],
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
     ): SymmetricalDifferences<T> | undefined;
-    lastItem(newCopy?: boolean): T | undefined;
   }
 
   interface Promise<T> {

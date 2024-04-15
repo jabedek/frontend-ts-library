@@ -31,6 +31,10 @@ declare global {
          */
         random(amount: number): T[];
         /**
+         * Sorts numerical array from min to max.
+         */
+        last(newCopy?: boolean): T | undefined;
+        /**
          * Compares two arrays of objects and returns the differences between them.
          *
          * Comparing two object arrays without providing id key (and accepting `compareObjectsWithoutIdKey`) will cause function to use `JSON.stringify`.
@@ -43,10 +47,6 @@ declare global {
          * objects without proper identifiers are not allowed to be compared.
          */
         symmetricDifference(comparedArray: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): SymmetricalDifferences<T> | undefined;
-        /**
-         * Sorts numerical array from min to max.
-         */
-        lastItem(newCopy?: boolean): T | undefined;
     }
     interface Promise<T> {
         /**

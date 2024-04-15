@@ -11,7 +11,7 @@ Frotsi provides basic extensions for Math, Promise, String, Array globals object
 ### Functions
 
 - Extending **JS.Math** with functions: **randomInt**
-- Extending **JS.Array** with functions: **sortNumbers, random, popRandom, symmetricDifference**
+- Extending **JS.Array** with functions: **sortNumbers, popRandom, random, last, symmetricDifference**
 - Extending **JS.Promise** with functions: **fireAndForget**
 - Providing functions related to generating random IDs: **generateInputId** (useful for html inputs), **generateDocumentId**
 - **loop** iterator so you don't have to iterate over unfilled Arrays anymore

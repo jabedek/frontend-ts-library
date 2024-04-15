@@ -73,7 +73,7 @@ function symmetricDifferenceFn(baseArray, comparedArray, compareObjectsWithoutId
 function sortNumbersFn(array) {
     return array.sort((a, b) => (a > b ? 1 : -1));
 }
-function lastItemFn(array, newCopy = false) {
+function lastFn(array, newCopy = false) {
     const item = array[array.length - 1];
     if (!item) {
         return undefined;
@@ -88,6 +88,6 @@ export default {
     randomFn,
     symmetricDifferenceFn,
     sortNumbersFn,
-    lastItemFn,
+    lastFn,
 };
 //# sourceMappingURL=array.js.map

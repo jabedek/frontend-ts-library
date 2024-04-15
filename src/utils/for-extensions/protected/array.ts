@@ -119,7 +119,7 @@ function sortNumbersFn<T extends number>(array: T[]): number[] {
   return array.sort((a, b) => (a > b ? 1 : -1));
 }
 
-function lastItemFn<T>(array: T[], newCopy = false): T | undefined {
+function lastFn<T>(array: T[], newCopy = false): T | undefined {
   const item = array[array.length - 1];
 
   if (!item) {
@@ -138,5 +138,5 @@ export default {
   randomFn,
   symmetricDifferenceFn,
   sortNumbersFn,
-  lastItemFn,
+  lastFn,
 };

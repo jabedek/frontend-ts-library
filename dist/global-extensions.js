@@ -42,10 +42,10 @@ if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
         return arrayUtilsProtected.symmetricDifferenceFn(this, comparedArray, compareObjectsWithoutIdKey, objectIdKey);
     };
 }
-if (!Array.prototype.hasOwnProperty("lastItem")) {
-    logs.push({ objName: "Array", fnName: "lastItem" });
-    Array.prototype.lastItem = function (newCopy = false) {
-        return arrayUtilsProtected.lastItemFn(this, newCopy);
+if (!Array.prototype.hasOwnProperty("last")) {
+    logs.push({ objName: "Array", fnName: "last" });
+    Array.prototype.last = function (newCopy = false) {
+        return arrayUtilsProtected.lastFn(this, newCopy);
     };
 }
 /** Promise */
