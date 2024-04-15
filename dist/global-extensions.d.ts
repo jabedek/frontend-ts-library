@@ -43,6 +43,10 @@ declare global {
          * objects without proper identifiers are not allowed to be compared.
          */
         symmetricDifference(comparedArray: T[], compareObjectsWithoutIdKey?: boolean, objectIdKey?: keyof T): SymmetricalDifferences<T> | undefined;
+        /**
+         * Sorts numerical array from min to max.
+         */
+        lastItem(newCopy?: boolean): T | undefined;
     }
     interface Promise<T> {
         /**

@@ -53,6 +53,10 @@ declare global {
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
     ): SymmetricalDifferences<T> | undefined;
+    /**
+     * Sorts numerical array from min to max.
+     */
+    lastItem(newCopy?: boolean): T | undefined;
   }
 
   interface Promise<T> {
@@ -150,6 +154,13 @@ if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
       compareObjectsWithoutIdKey,
       objectIdKey
     );
+  };
+}
+
+if (!Array.prototype.hasOwnProperty("lastItem")) {
+  logs.push({ objName: "Array", fnName: "lastItem" });
+  Array.prototype.lastItem = function <T>(newCopy = false): T | undefined {
+    return arrayUtilsProtected.lastItemFn<T>(this, newCopy);
   };
 }
 

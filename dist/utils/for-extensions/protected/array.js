@@ -73,10 +73,21 @@ function symmetricDifferenceFn(baseArray, comparedArray, compareObjectsWithoutId
 function sortNumbersFn(array) {
     return array.sort((a, b) => (a > b ? 1 : -1));
 }
+function lastItemFn(array, newCopy = false) {
+    const item = array[array.length - 1];
+    if (!item) {
+        return undefined;
+    }
+    if (["boolean", "string", "number"].includes(typeof item)) {
+        return item;
+    }
+    return newCopy ? Object.assign({}, item) : item;
+}
 export default {
     popRandomFn,
     randomFn,
     symmetricDifferenceFn,
     sortNumbersFn,
+    lastItemFn,
 };
 //# sourceMappingURL=array.js.map

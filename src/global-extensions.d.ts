@@ -16,6 +16,7 @@ declare global {
       compareObjectsWithoutIdKey?: boolean,
       objectIdKey?: keyof T
     ): SymmetricalDifferences<T> | undefined;
+    lastItem(newCopy?: boolean): T | undefined;
   }
 
   interface Promise<T> {

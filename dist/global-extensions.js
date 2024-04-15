@@ -42,6 +42,12 @@ if (!Array.prototype.hasOwnProperty("symmetricDifference")) {
         return arrayUtilsProtected.symmetricDifferenceFn(this, comparedArray, compareObjectsWithoutIdKey, objectIdKey);
     };
 }
+if (!Array.prototype.hasOwnProperty("lastItem")) {
+    logs.push({ objName: "Array", fnName: "lastItem" });
+    Array.prototype.lastItem = function (newCopy = false) {
+        return arrayUtilsProtected.lastItemFn(this, newCopy);
+    };
+}
 /** Promise */
 if (!Promise.prototype.hasOwnProperty("fireAndForget")) {
     logs.push({ objName: "Promise", fnName: "fireAndForget" });
